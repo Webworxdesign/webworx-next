@@ -12,17 +12,19 @@ import {
   FeaturedImage,
   SEO,
 } from '../components';
+import { GlobalFields } from '../components/GlobalFields';
 
 export default function Component(props) {
   const { title: siteTitle, description: siteDescription } =
     props?.data?.generalSettings;
   const primaryMenu = props?.data?.headerMenuItems?.nodes ?? [];
   const footerMenu = props?.data?.footerMenuItems?.nodes ?? [];
-  const { name, posts } = props.data.nodeByUri;
+  const { name, posts } = props.data.nodeByUri
 
   return (
     <>
       <SEO title={siteTitle} description={siteDescription} />
+      <GlobalFields />
       <Header
         title={siteTitle}
         description={siteDescription}

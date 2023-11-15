@@ -10,11 +10,14 @@ import {
   Hero,
   SEO,
 } from '../components';
+import { GlobalFields } from '../components/GlobalFields';
 
 export default function Component() {
+
   const { data } = useQuery(Component.query, {
     variables: Component.variables(),
   });
+  
 
   const { title: siteTitle, description: siteDescription } =
     data?.generalSettings;
@@ -24,6 +27,7 @@ export default function Component() {
   return (
     <>
       <SEO title={siteTitle} description={siteDescription} />
+      <GlobalFields />
       <Header
         title={siteTitle}
         description={siteDescription}

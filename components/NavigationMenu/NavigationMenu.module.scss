@@ -47,13 +47,18 @@
 	}
 
 	a {
+		display: flex;
+		align-items: center;
 		color: var(--wpe--navigation-menu--color);
 		padding: 0.5rem;
-		display: block;
 		transition: all 0.2s ease-out;
 		width: 100%;
 		white-space: nowrap;
 		text-align: center;
+
+		svg {
+			margin-left:5px
+		}
 
 		&:hover,
 		&:focus {

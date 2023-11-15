@@ -13,7 +13,7 @@ export default function CoreCode(props) {
     // This markup is from the WordPress CoreCode block
     // add the className and styles to the markup
     // add props.attributes?.content to the markup
-    <pre className={attributes?.cssClassName} style={styles}>
+    <pre className={attributes?.cssClassName} style={style}>
       <code>{`${attributes?.content}`}</code>
     </pre>
   );

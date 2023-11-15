@@ -1,4 +1,5 @@
 import Head from 'next/head';
+import ThemeSettings from '../../constants/themeSettings';
 
 /**
  * Provide SEO related meta tags to a page.
@@ -16,7 +17,9 @@ export default function SEO({ title, description, imageUrl, url }) {
     return null;
   }
 
-  return (
+  const { siteIcon } = ThemeSettings();
+
+  return ( 
     <>
       <Head>
         <meta property="og:type" content="website" />
@@ -50,6 +53,13 @@ export default function SEO({ title, description, imageUrl, url }) {
           <>
             <meta property="og:url" content={url} />
             <meta property="twitter:url" content={url} />
+          </>
+        )}
+
+        {siteIcon && (
+          <>
+            <link rel="icon" href={siteIcon.sourceUrl} />
+            <link rel="apple-touch-icon" href={siteIcon.sourceUrl} />
           </>
         )}
       </Head>

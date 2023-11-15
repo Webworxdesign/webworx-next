@@ -35,13 +35,273 @@
 	--wpe--font-weight--light: 300;
 	--wpe--font-weight--medium: 400;
 	--wpe--font-weight--bold: 700;
+	
+	// Body Element Type.
+	--body--font--size--desktop: 16px;
+    --body--font--weight--desktop: 400;
+    --body--line--height--desktop: 1.2;
+    --body--margin--bottom--desktop: 10px;
+
+    --body--font--size--tablet: 16px;
+    --body--font--weight--tablet: 400;
+    --body--line--height--tablet: 1.2;
+    --body--margin--bottom--tablet: 10px;
+
+    --body--font--size--mobile: 16px;
+    --body--font--weight--mobile: 400;
+    --body--line--height--mobile: 1.2;
+    --body--margin--bottom--mobile: 10px;
+
+	// Main Title Type.
+	--main--title--font--size--desktop: 2.5rem;
+	--main--title--font--weight--desktop: 700;
+	--main--title--line--height--desktop: 1.2;
+	--main--title--margin--bottom--desktop: 10px;
+
+	--main--title--font--size--tablet: 2.5rem;
+	--main--title--font--weight--tablet: 700;
+	--main--title--line--height--tablet: 1.2;
+	--main--title--margin--bottom--tablet: 10px;
+
+	--main--title--font--size--mobile: 2.5rem;
+	--main--title--font--weight--mobile: 700;
+	--main--title--line--height--mobile: 1.2;
+	--main--title--margin--bottom--mobile: 10px;
+
+	// Site Description Type.
+	--site--description--font--size--desktop: 1.25rem;
+	--site--description--font--weight--desktop: 400;
+	--site--description--line--height--desktop: 1.2;
+	--site--description--margin--bottom--desktop: 10px;
+
+	--site--description--font--size--tablet: 1.25rem;
+	--site--description--font--weight--tablet: 400;
+	--site--description--line--height--tablet: 1.2;
+	--site--description--margin--bottom--tablet: 10px;
+
+	--site--description--font--size--mobile: 1.25rem;
+	--site--description--font--weight--mobile: 400;
+	--site--description--line--height--mobile: 1.2;
+	--site--description--margin--bottom--mobile: 10px;
+
+	// Primary Meny Item Type.
+	--primary--menu--item--font--size--desktop: 1rem;
+	--primary--menu--item--font--weight--desktop: 400;
+	--primary--menu--item--line--height--desktop: 1.2;
+	--primary--menu--item--margin--bottom--desktop: 10px;
+
+	--primary--menu--item--font--size--tablet: 1rem;
+	--primary--menu--item--font--weight--tablet: 400;
+	--primary--menu--item--line--height--tablet: 1.2;
+	--primary--menu--item--margin--bottom--tablet: 10px;
+
+	--primary--menu--item--font--size--mobile: 1rem;
+	--primary--menu--item--font--weight--mobile: 400;
+	--primary--menu--item--line--height--mobile: 1.2;
+	--primary--menu--item--margin--bottom--mobile: 10px;
+
+	// Primary Sub Menu Items Type.
+	--primary--sub--menu--item--font--size--desktop: 1rem;
+	--primary--sub--menu--item--font--weight--desktop: 400;
+	--primary--sub--menu--item--line--height--desktop: 1.2;
+	--primary--sub--menu--item--margin--bottom--desktop: 10px;
+
+	--primary--sub--menu--item--font--size--tablet: 1rem;
+	--primary--sub--menu--item--font--weight--tablet: 400;
+	--primary--sub--menu--item--line--height--tablet: 1.2;
+	--primary--sub--menu--item--margin--bottom--tablet: 10px;
+
+	--primary--sub--menu--item--font--size--mobile: 1rem;
+	--primary--sub--menu--item--font--weight--mobile: 400;
+	--primary--sub--menu--item--line--height--mobile: 1.2;
+	--primary--sub--menu--item--margin--bottom--mobile: 10px;
+
+	// Buttons Type. 
+	--button--font--size--desktop: 1rem;
+	--button--font--weight--desktop: 400;
+	--button--line--height--desktop: 1.2;
+	--button--margin--bottom--desktop: 0px;
+
+	--button--font--size--tablet: 1rem;
+	--button--font--weight--tablet: 400;
+	--button--line--height--tablet: 1.2;
+	--button--margin--bottom--tablet: 0px;
+
+	--button--font--size--mobile: 1rem;
+	--button--font--weight--mobile: 400;
+	--button--line--height--mobile: 1.2;
+	--button--margin--bottom--mobile: 0px;
+
+	// Heading 1 Type.
+	--h1--font--size--desktop: 2.5rem;
+	--h1--font--weight--desktop: 700;
+	--h1--line--height--desktop: 1.2;
+	--h1--margin--bottom--desktop: 10px;
+
+	--h1--font--size--tablet: 2.5rem;
+	--h1--font--weight--tablet: 700;
+	--h1--line--height--tablet: 1.2;
+	--h1--margin--bottom--tablet: 10px;
+
+	--h1--font--size--mobile: 2.5rem;
+	--h1--font--weight--mobile: 700;
+	--h1--line--height--mobile: 1.2;
+	--h1--margin--bottom--mobile: 10px;
+
+	// Heading 2 Type.
+	--h2--font--size--desktop: 2rem;
+	--h2--font--weight--desktop: 700;
+	--h2--line--height--desktop: 1.2;
+	--h2--margin--bottom--desktop: 10px;
+
+	--h2--font--size--tablet: 2rem;
+	--h2--font--weight--tablet: 700;
+	--h2--line--height--tablet: 1.2;
+	--h2--margin--bottom--tablet: 10px;
+
+	--h2--font--size--mobile: 2rem;
+	--h2--font--weight--mobile: 700;
+	--h2--line--height--mobile: 1.2;
+	--h2--margin--bottom--mobile: 10px;
+
+	// Heading 3 Type.
+	--h3--font--size--desktop: 1.75rem;
+	--h3--font--weight--desktop: 700;
+	--h3--line--height--desktop: 1.2;
+	--h3--margin--bottom--desktop: 10px;
+
+	--h3--font--size--tablet: 1.75rem;
+	--h3--font--weight--tablet: 700;
+	--h3--line--height--tablet: 1.2;
+	--h3--margin--bottom--tablet: 10px;
+
+	--h3--font--size--mobile: 1.75rem;
+	--h3--font--weight--mobile: 700;
+	--h3--line--height--mobile: 1.2;
+	--h3--margin--bottom--mobile: 10px;
+
+	// Heading 4 Type.
+	--h4--font--size--desktop: 1.5rem;
+	--h4--font--weight--desktop: 700;
+	--h4--line--height--desktop: 1.2;
+	--h4--margin--bottom--desktop: 10px;
+
+	--h4--font--size--tablet: 1.5rem;
+	--h4--font--weight--tablet: 700;
+	--h4--line--height--tablet: 1.2;
+	--h4--margin--bottom--tablet: 10px;
+
+	--h4--font--size--mobile: 1.5rem;
+	--h4--font--weight--mobile: 700;
+	--h4--line--height--mobile: 1.2;
+	--h4--margin--bottom--mobile: 10px;
+
+	// Heading 5 Type.
+	--h5--font--size--desktop: 1.25rem;
+	--h5--font--weight--desktop: 700;
+	--h5--line--height--desktop: 1.2;
+	--h5--margin--bottom--desktop: 10px;
+
+	--h5--font--size--tablet: 1.25rem;
+	--h5--font--weight--tablet: 700;
+	--h5--line--height--tablet: 1.2;
+	--h5--margin--bottom--tablet: 10px;
+
+	--h5--font--size--mobile: 1.25rem;
+	--h5--font--weight--mobile: 700;
+	--h5--line--height--mobile: 1.2;
+	--h5--margin--bottom--mobile: 10px;
+
+	// Heading 6 Type.
+	--h6--font--size--desktop: 1rem;
+	--h6--font--weight--desktop: 700;
+	--h6--line--height--desktop: 1.2;
+	--h6--margin--bottom--desktop: 10px;
+
+	--h6--font--size--tablet: 1rem;
+	--h6--font--weight--tablet: 700;
+	--h6--line--height--tablet: 1.2;
+	--h6--margin--bottom--tablet: 10px;
+
+	--h6--font--size--mobile: 1rem;
+	--h6--font--weight--mobile: 700;
+	--h6--line--height--mobile: 1.2;
+	--h6--margin--bottom--mobile: 10px;
+
+	// Top Bar Type.
+	--top--bar--font--size--desktop: 1rem;
+	--top--bar--font--weight--desktop: 400;
+	--top--bar--line--height--desktop: 1.2;
+	--top--bar--margin--bottom--desktop: 10px;
+	
+	--top--bar--font--size--tablet: 1rem;
+	--top--bar--font--weight--tablet: 400;
+	--top--bar--line--height--tablet: 1.2;
+	--top--bar--margin--bottom--tablet: 10px;
+
+	--top--bar--font--size--mobile: 1rem;
+	--top--bar--font--weight--mobile: 400;
+	--top--bar--line--height--mobile: 1.2;
+	--top--bar--margin--bottom--mobile: 10px;
+
+	// Single Content Title Type.
+	--single--content--title--font--size--desktop: 2.5rem;
+	--single--content--title--font--weight--desktop: 700;
+	--single--content--title--line--height--desktop: 1.2;
+	--single--content--title--margin--bottom--desktop: 10px;
+
+	--single--content--title--font--size--tablet: 2.5rem;
+	--single--content--title--font--weight--tablet: 700;
+	--single--content--title--line--height--tablet: 1.2;
+	--single--content--title--margin--bottom--tablet: 10px;
+
+	--single--content--title--font--size--mobile: 2.5rem;
+	--single--content--title--font--weight--mobile: 700;
+	--single--content--title--line--height--mobile: 1.2;
+	--single--content--title--margin--bottom--mobile: 10px;
+
+	// Archive Content Title Type.
+	--archive--content--title--font--size--desktop: 2.5rem;
+	--archive--content--title--font--weight--desktop: 700;
+	--archive--content--title--line--height--desktop: 1.2;
+	--archive--content--title--margin--bottom--desktop: 10px;
+
+	--archive--content--title--font--size--tablet: 2.5rem;
+	--archive--content--title--font--weight--tablet: 700;
+	--archive--content--title--line--height--tablet: 1.2;
+	--archive--content--title--margin--bottom--tablet: 10px;
+
+	--archive--content--title--font--size--mobile: 2.5rem;
+	--archive--content--title--font--weight--mobile: 700;
+	--archive--content--title--line--height--mobile: 1.2;
+	--archive--content--title--margin--bottom--mobile: 10px;
+
+	// Footer Type.
+	--footer--font--size--desktop: 1rem;
+	--footer--font--weight--desktop: 400;
+	--footer--line--height--desktop: 1.2;
+	--footer--margin--bottom--desktop: 10px;
+
+	--footer--font--size--tablet: 1rem;
+	--footer--font--weight--tablet: 400;
+	--footer--line--height--tablet: 1.2;
+	--footer--margin--bottom--tablet: 10px;
+	
+	--footer--font--size--mobile: 1rem;
+	--footer--font--weight--mobile: 400;
+	--footer--line--height--mobile: 1.2;
+	--footer--margin--bottom--mobile: 10px;
 
 	// Spacing.
 	--wpe--content--max-width: 620px;
 	--wpe--section--padding-y: 3rem;
-	--wpe--container--padding-x: 15px;
+	--wpe--content--padding: 15px;
 	--wpe--container--max-width: 1000px;
 
 	// Shadows.
 	--wpe--shadow--large: 0 50px 120px -40px rgba(150, 150, 150, 0.2), 0 20px 60px -30px rgba(0, 0, 0, 0.5);
+
+	// Header 
+	--inside--header--padding: 15px 30px;
+	--inside--header--padding--mobile: 10px 15px;
 }

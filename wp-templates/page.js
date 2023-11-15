@@ -12,6 +12,7 @@ import {
   FeaturedImage,
   SEO,
 } from '../components';
+import { GlobalFields } from '../components/GlobalFields';
 
 export default function Component(props) {
   // Loading state for previews
@@ -32,6 +33,7 @@ export default function Component(props) {
         description={siteDescription}
         imageUrl={featuredImage?.node?.sourceUrl}
       />
+      <GlobalFields />
       <Header
         title={siteTitle}
         description={siteDescription}

@@ -1,3 +1,4 @@
+import { useEffect } from 'react';
 import { gql } from '@apollo/client';
 import * as MENUS from '../constants/menus';
 import { BlogInfoFragment } from '../fragments/GeneralSettings';
@@ -12,17 +13,27 @@ import {
   Post,
   SEO,
 } from '../components';
+import HeaderSettings from '../constants/HeaderSettings';
+import { GlobalFields } from '../components/GlobalFields';
 
 export default function Component(props) {
+
   const { title: siteTitle, description: siteDescription } =
     props?.data?.generalSettings;
   const primaryMenu = props?.data?.headerMenuItems?.nodes ?? [];
   const footerMenu = props?.data?.footerMenuItems?.nodes ?? [];
   const { name, posts } = props.data.nodeByUri;
+  
+  const { headerPresets } = HeaderSettings();
+
+  useEffect(() => {
+    document.body.classList.add(headerPresets);
+  });
 
   return (
     <>
       <SEO title={siteTitle} description={siteDescription} />
+      <GlobalFields />
       <Header
         title={siteTitle}
         description={siteDescription}
