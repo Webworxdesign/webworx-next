@@ -41,7 +41,6 @@ export default function Component(props) {
       />
       <Main>
         <>
-          <EntryHeader title={title} image={featuredImage?.node} />
           <Container>
             <ContentWrapper content={content} />
           </Container>

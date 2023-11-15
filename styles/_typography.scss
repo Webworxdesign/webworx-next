@@ -1,8 +1,37 @@
+@mixin declare-font-face($font-face-family, $font-face-filename, $font-face-weight : normal, $font-face-style :normal) {
+    @font-face {
+        font-family: '#{$font-face-family}';
+        src: url(('#{$font-face-filename}.eot'));
+        src: url(('#{$font-face-filename}.eot?#iefix')) format('embedded-opentype'),
+        url(('#{$font-face-filename}.woff')) format('woff'),
+        url(('#{$font-face-filename}.ttf')) format('truetype'),
+        url(('#{$font-face-filename}.svg##{$font-face-family}')) format('svg');
+        font-weight: $font-face-weight;
+        font-style: $font-face-style;
+    }
+}
+
+// Open Sans
+@include declare-font-face('Open Sans', './assets/fonts/open-sans/OpenSans', 400, normal);
+@include declare-font-face('Open Sans', './assets/fonts/open-sans/OpenSans-Bold', 700, normal);
+@include declare-font-face('Open Sans', './assets/fonts/open-sans/OpenSans-Italic', 400, italic);
+@include declare-font-face('Open Sans', './assets/fonts/open-sans/OpenSans-BoldItalic', 700, italic);
+@include declare-font-face('Open Sans', './assets/fonts/open-sans/OpenSans-Semibold', 600, normal);
+@include declare-font-face('Open Sans', './assets/fonts/open-sans/OpenSans-SemiboldItalic', 600, italic);
+
+// Playfair Display
+@include declare-font-face('Playfair Display', './assets/fonts/playfair-display/PlayfairDisplay-Regular', 400, normal);
+@include declare-font-face('Playfair Display', './assets/fonts/playfair-display/PlayfairDisplay-Bold', 700, normal);
+@include declare-font-face('Playfair Display', './assets/fonts/playfair-display/PlayfairDisplay-Italic', 400, italic);
+@include declare-font-face('Playfair Display', './assets/fonts/playfair-display/PlayfairDisplay-BoldItalic', 700, italic);
+
+  
 body {
-	font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Helvetica, Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji";
+	font-family: 'Open Sans', sans-serif;
 }
 
 h1, h2, h3, h4, h5, h6 {
+    font-family: Playfair Display, serif;
 	margin: 0 0 1rem;
 }
 
@@ -10,59 +39,63 @@ a {
 	color: var(--link-color);
 }
 
-// sass loop to generate font sizes
-
 
 body {
     font-size: var(--body--font--size--desktop);
     line-height: var(--body--line--height--desktop);
-    margin-bottom: var(--body--margin--bottom--desktop);
+    margin-left: 0;
+    margin-right: 0;
+    margin-bottom: 0;
 
     @media (max-width: $breakpoint-medium) and (min-width: $breakpoint-small) {
         font-size: var(--body--font--size--tablet);
         line-height: var(--body--line--height--tablet);
-        margin-bottom: var(--body--margin--bottom--tablet);
+        margin-left: 0;
+        margin-right: 0;
+        margin-bottom: 0;
     }
     @media (max-width: 767px) {
         font-size: var(--body--font--size--mobile);
         line-height: var(--body--line--height--mobile);
-        margin-bottom: var(--body--margin--bottom--mobile);
+        margin-left: 0;
+        margin-right: 0;
+        margin-bottom: 0;
     }
 }
 
 .main-title {
-    font-size: var(--main--title--font--size--desktop);
-    line-height: var(--main--title--line--height--desktop);
+    font-size: var(--main-title--font--size--desktop);
+    line-height: var(--main-title--line--height--desktop);
     margin-top: 0;
-    margin-bottom: var(--main--title--margin--bottom--desktop);
+    margin-bottom: var(--main-title--margin--bottom--desktop);
 
     @media (max-width: $breakpoint-medium) and (min-width: $breakpoint-small) {
-        font-size: var(--main--title--font--size--tablet);
-        line-height: var(--main--title--line--height--tablet);
-        margin-bottom: var(--main--title--margin--bottom--tablet);
+        font-size: var(--main-title--font--size--tablet);
+        line-height: var(--main-title--line--height--tablet);
+        margin-bottom: var(--main-title--margin--bottom--tablet);
     }
     @media (max-width: 767px) {
-        font-size: var(--main--title--font--size--mobile);
-        line-height: var(--main--title--line--height--mobile);
-        margin-bottom: var(--main--title--margin--bottom--mobile);
+        font-size: var(--main-title--font--size--mobile);
+        line-height: var(--main-title--line--height--mobile);
+        margin-bottom: var(--main-title--margin--bottom--mobile);
     }
 }
 
 .site-description {
-    font-size: var(--site--description--font--size--desktop);
-    line-height: var(--site--description--line--height--desktop);
+    font-size: var(--site-description--font--size--desktop);
+    line-height: var(--site-description--line--height--desktop);
     margin-top: 0;
-    margin-bottom: var(--site--description--margin--bottom--desktop);
+    margin-bottom: var(--site-description--margin--bottom--desktop);
 
     @media (max-width: $breakpoint-medium) and (min-width: $breakpoint-small) {
-        font-size: var(--site--description--font--size--tablet);
-        line-height: var(--site--description--line--height--tablet);
-        margin-bottom: var(--site--description--margin--bottom--tablet);
+        font-size: var(--site-description--font--size--tablet);
+        line-height: var(--site-description--line--height--tablet);
+        margin-bottom: var(--site-description--margin--bottom--tablet);
     }
     @media (max-width: 767px) {
-        font-size: var(--site--description--font--size--mobile);
-        line-height: var(--site--description--line--height--mobile);
-        margin-bottom: var(--site--description--margin--bottom--mobile);
+        font-size: var(--site-description--font--size--mobile);
+        line-height: var(--site-description--line--height--mobile);
+        margin-bottom: var(--site-description--margin--bottom--mobile);
     }
 }
 
@@ -70,36 +103,36 @@ header {
     nav {
         ul {
             a {
-                font-size: var(--primary--menu--items--font--size--desktop);
-                line-height: var(--primary--menu--items--line--height--desktop);
-                margin-bottom: var(--primary--menu--items--margin--bottom--desktop);
+                font-size: var(--primary-menu-items--font--size--desktop);
+                line-height: var(--primary-menu-items--line--height--desktop);
+                margin-bottom: var(--primary-menu-items--margin--bottom--desktop);
 
                 @media (max-width: $breakpoint-medium) and (min-width: $breakpoint-small) {
-                    font-size: var(--primary--menu--items--font--size--tablet);
-                    line-height: var(--primary--menu--items--line--height--tablet);
-                    margin-bottom: var(--primary--menu--items--margin--bottom--tablet);
+                    font-size: var(--primary-menu-items--font--size--tablet);
+                    line-height: var(--primary-menu-items--line--height--tablet);
+                    margin-bottom: var(--primary-menu-items--margin--bottom--tablet);
                 }
                 @media (max-width: 767px) {
-                    font-size: var(--primary--menu--items--font--size--mobile);
-                    line-height: var(--primary--menu--items--line--height--mobile);
-                    margin-bottom: var(--primary--menu--items--margin--bottom--mobile);
+                    font-size: var(--primary-menu-items--font--size--mobile);
+                    line-height: var(--primary-menu-items--line--height--mobile);
+                    margin-bottom: var(--primary-menu-items--margin--bottom--mobile);
                 }
             }
             ul {
                 a {
-                    font-size: var(--primary--sub--menu-items--font--size--desktop);
-                    line-height: var(--primary--sub--menu-items--line--height--desktop);
-                    margin-bottom: var(--primary--sub--menu-items--margin--bottom--desktop);
+                    font-size: var(--primary-sub-menu-items--font--size--desktop);
+                    line-height: var(--primary-sub-menu-items--line--height--desktop);
+                    margin-bottom: var(--primary-sub-menu-items--margin--bottom--desktop);
 
                     @media (max-width: $breakpoint-medium) and (min-width: $breakpoint-small) {
-                        font-size: var(--primary--sub--menu-items--font--size--tablet);
-                        line-height: var(--primary--sub--menu-items--line--height--tablet);
-                        margin-bottom: var(--primary--sub--menu-items--margin--bottom--tablet);
+                        font-size: var(--primary-sub-menu-items--font--size--tablet);
+                        line-height: var(--primary-sub-menu-items--line--height--tablet);
+                        margin-bottom: var(--primary-sub-menu-items--margin--bottom--tablet);
                     }
                     @media (max-width: 767px) {
-                        font-size: var(--primary--sub--menu-items--font--size--mobile);
-                        line-height: var(--primary--sub--menu-items--line--height--mobile);
-                        margin-bottom: var(--primary--sub--menu-items--margin--bottom--mobile);
+                        font-size: var(--primary-sub-menu-items--font--size--mobile);
+                        line-height: var(--primary-sub-menu-items--line--height--mobile);
+                        margin-bottom: var(--primary-sub-menu-items--margin--bottom--mobile);
                     }
                 }
             }

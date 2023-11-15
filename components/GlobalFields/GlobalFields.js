@@ -32,17 +32,18 @@ export default function GlobalFields() {
       `);
   });
 
+
   return (
     <>
       <style global jsx>{`
         :root {
-          ${tagVariables}
           ${headerPaddingVariable}
           ${headerPaddingMobileVariable}
           ${containerWidthVariable}
           ${contentMaxWidthVariable}
           ${contentPaddingVariable}
           ${contentPaddingMobileVariable}
+          ${tagVariables.join('').replace(/[\n\r]+/g, '')}
         }
       `}</style>
     </>
