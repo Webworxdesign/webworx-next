@@ -6,6 +6,7 @@ import { Container, NavigationMenu, SkipNavigationLink } from '../../components'
 import ThemeSettings from '../../constants/themeSettings';
 import HeaderSettings from '../../constants/HeaderSettings';
 import styles from './Header.module.scss';
+import { DarkModeToggle } from '../DarkModeToggle/DarkModeToggle';
 
 let cx = classNames.bind(styles);
 
@@ -66,7 +67,8 @@ export default function Header({
               <NavigationMenu menuItems={menuItems} />
             </div>
           </div>
-        </nav>        
+        </nav>   
+        <DarkModeToggle />     
       </div>
     </header>
   );

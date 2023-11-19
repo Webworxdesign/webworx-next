@@ -11,6 +11,7 @@ import {
   SEO,
 } from '../components';
 import { GlobalFields } from '../components/GlobalFields';
+import { Intro } from '../components/Intro';
 
 export default function Component() {
 
@@ -24,6 +25,15 @@ export default function Component() {
   const primaryMenu = data?.headerMenuItems?.nodes ?? [];
   const footerMenu = data?.footerMenuItems?.nodes ?? [];
 
+  useEffect( () => {
+    (
+      async () => {
+          const LocomotiveScroll = (await import('locomotive-scroll')).default
+          const locomotiveScroll = new LocomotiveScroll();
+      }
+    )()
+  }, [])
+
   return (
     <>
       <SEO title={siteTitle} description={siteDescription} />
@@ -34,13 +44,7 @@ export default function Component() {
         menuItems={primaryMenu}
       />
       <Main>
-        <Container>
-          <Hero title={'Front Page'} />
-          <div className="text-center">
-            <p>This page is utilizing the "front-page" WordPress template.</p>
-            <code>wp-templates/front-page.js</code>
-          </div>
-        </Container>
+        <Intro />
       </Main>
       <Footer title={siteTitle} menuItems={footerMenu} />
     </>
