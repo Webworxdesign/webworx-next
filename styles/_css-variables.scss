@@ -3,38 +3,38 @@
 
 :root {
 	// Color Definitions.
-	--wpe--color--black: #000;
-	--wpe--color--white: #fff;
-	--wpe--color--offwhite: #f7f7f7;
-	--wpe--color--neutral: rgba(175,184,193,0.2);
-	--wpe--color--slate: #0a2540;
-	--wpe--color--purple: #635bff;
+	--wwx--color--black: #222;
+	--wwx--color--white: #fff;
+	--wwx--color--offwhite: #f7f7f7;
+	--wwx--color--neutral: rgba(175,184,193,0.2);
+	--wwx--color--slate: #0a2540;
+	--wwx--color--accent: #F1EC6F;
 
 	// Color Assignments.
-	--wpe--color--accent: var(--wpe--color--purple);
-	--wpe--color--accent--dark: var(--wpe--color--slate);
-	--wpe--color--title: var(--wpe--color--black);
-	--wpe--link--color: var(--wpe--color--accent);
-	--wpe--code--color: var(--wpe--color--black);
-	--wpe--code--background-color: var(--wpe--color--neutral);
-	--wpe--header--color: var(--wpe--color--slate);
-	--wpe--header--background-color: var(--wpe--color--white);
-	--wpe--navigation-menu--color: var(--wpe--color--black);
-	--wpe--navigation-menu--color--hover: var(--wpe--color--accent);
-	--wpe--navigation-menu--background-color: transparent;
-	--wpe--dropdown--background-color: var(--wpe--color--white);
-	--wpe--main--color: var(--wpe--color--black);
-	--wpe--main--background-color: var(--wpe--color--white);
-	--wpe--footer--color: var(--wpe--color--black);
-	--wpe--footer--background-color: var(--wpe--color--white);
-	--wpe--heading--color: var(--wpe--color--accent);
-	--wpe--border--light: 1px solid var(--wpe--color--neutral);
-	--wpe--border--extra-light: 1px solid var(--wpe--color--offwhite);
+	--wwx--color--accent: var(--wwx--color--accent);
+	--wwx--color--accent--dark: var(--wwx--color--slate);
+	--wwx--color--title: var(--wwx--color--black);
+	--wwx--link--color: var(--wwx--color--accent);
+	--wwx--code--color: var(--wwx--color--black);
+	--wwx--code--background-color: var(--wwx--color--neutral);
+	--wwx--header--color: var(--wwx--color--slate);
+	--wwx--header--background-color: var(--wwx--color--white);
+	--wwx--navigation-menu--color: var(--wwx--color--black);
+	--wwx--navigation-menu--color--hover: var(--wwx--color--accent);
+	--wwx--navigation-menu--background-color: transparent;
+	--wwx--dropdown--background-color: var(--wwx--color--white);
+	--wwx--main--color: var(--wwx--color--black);
+	--wwx--main--background-color: var(--wwx--color--white);
+	--wwx--footer--color: var(--wwx--color--black);
+	--wwx--footer--background-color: var(--wwx--color--white);
+	--wwx--heading--color: var(--wwx--color--accent);
+	--wwx--border--light: 1px solid var(--wwx--color--neutral);
+	--wwx--border--extra-light: 1px solid var(--wwx--color--offwhite);
 
 	// Type.
-	--wpe--font-weight--light: 300;
-	--wpe--font-weight--medium: 400;
-	--wpe--font-weight--bold: 700;
+	--wwx--font-weight--light: 300;
+	--wwx--font-weight--medium: 400;
+	--wwx--font-weight--bold: 700;
 	
 	// Body Element Type.
 	--body--font--size--desktop: 16px;
@@ -293,15 +293,27 @@
 	--footer--margin--bottom--mobile: 10px;
 
 	// Spacing.
-	--wpe--content--max-width: 620px;
-	--wpe--section--padding-y: 3rem;
-	--wpe--content--padding: 15px;
-	--wpe--container--max-width: 1000px;
+	--wwx--content--max-width: 620px;
+	--wwx--section--padding-y: 3rem;
+	--wwx--content--padding--left: 15px;
+	--wwx--content--padding--right: 15px;
+	--wwx--content--padding--left--mobile: 15px;
+	--wwx--content--padding--right--mobile: 15px;
+	--wwx--container--max-width: 1000px;
 
 	// Shadows.
-	--wpe--shadow--large: 0 50px 120px -40px rgba(150, 150, 150, 0.2), 0 20px 60px -30px rgba(0, 0, 0, 0.5);
+	--wwx--shadow--large: 0 50px 120px -40px rgba(150, 150, 150, 0.2), 0 20px 60px -30px rgba(0, 0, 0, 0.5);
 
 	// Header 
 	--inside--header--padding: 15px 30px;
 	--inside--header--padding--mobile: 10px 15px;
+}
+
+.dark {
+	--wwx--color--black: #fff;
+	--wwx--color--white: #000;
+	--wwx--color--offwhite: #f7f7f7;
+	--wwx--color--neutral: rgba(175,184,193,0.2);
+	--wwx--color--slate: #0a2540;
+	--wwx--color--accent: #F1EC6F;
 }

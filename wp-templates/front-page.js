@@ -1,5 +1,7 @@
 import { useQuery, gql } from '@apollo/client';
+import { useEffect } from 'react';
 import * as MENUS from '../constants/menus';
+import { ThemeProvider } from '../context/ThemeContext';
 import { BlogInfoFragment } from '../fragments/GeneralSettings';
 import {
   Header,
@@ -11,7 +13,7 @@ import {
   SEO,
 } from '../components';
 import { GlobalFields } from '../components/GlobalFields';
-import { Intro } from '../components/Intro';
+import { HomeHeroBanner } from '../components/HomeHeroBanner';
 
 export default function Component() {
 
@@ -19,7 +21,6 @@ export default function Component() {
     variables: Component.variables(),
   });
   
-
   const { title: siteTitle, description: siteDescription } =
     data?.generalSettings;
   const primaryMenu = data?.headerMenuItems?.nodes ?? [];
@@ -38,15 +39,17 @@ export default function Component() {
     <>
       <SEO title={siteTitle} description={siteDescription} />
       <GlobalFields />
-      <Header
-        title={siteTitle}
-        description={siteDescription}
-        menuItems={primaryMenu}
-      />
-      <Main>
-        <Intro />
-      </Main>
-      <Footer title={siteTitle} menuItems={footerMenu} />
+      <ThemeProvider>
+        <Header
+          title={siteTitle}
+          description={siteDescription}
+          menuItems={primaryMenu}
+        />
+        <Main>
+          <HomeHeroBanner />
+        </Main>
+        <Footer title={siteTitle} menuItems={footerMenu} />
+      </ThemeProvider>
     </>
   );
 }

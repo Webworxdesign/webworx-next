@@ -12,18 +12,22 @@
 }
 
 // Open Sans
-@include declare-font-face('Open Sans', './assets/fonts/open-sans/OpenSans', 400, normal);
-@include declare-font-face('Open Sans', './assets/fonts/open-sans/OpenSans-Bold', 700, normal);
-@include declare-font-face('Open Sans', './assets/fonts/open-sans/OpenSans-Italic', 400, italic);
-@include declare-font-face('Open Sans', './assets/fonts/open-sans/OpenSans-BoldItalic', 700, italic);
-@include declare-font-face('Open Sans', './assets/fonts/open-sans/OpenSans-Semibold', 600, normal);
-@include declare-font-face('Open Sans', './assets/fonts/open-sans/OpenSans-SemiboldItalic', 600, italic);
+@include declare-font-face('Open Sans', './../assets/fonts/open-sans/OpenSans-Light', 300, normal);
+@include declare-font-face('Open Sans', './../assets/fonts/open-sans/OpenSans', 400, normal);
+@include declare-font-face('Open Sans', './../assets/fonts/open-sans/OpenSans-Bold', 700, normal);
+@include declare-font-face('Open Sans', './../assets/fonts/open-sans/OpenSans-Italic', 400, italic);
+@include declare-font-face('Open Sans', './../assets/fonts/open-sans/OpenSans-BoldItalic', 700, italic);
+@include declare-font-face('Open Sans', './../assets/fonts/open-sans/OpenSans-Semibold', 600, normal);
+@include declare-font-face('Open Sans', './../assets/fonts/open-sans/OpenSans-SemiboldItalic', 600, italic);
 
 // Playfair Display
-@include declare-font-face('Playfair Display', './assets/fonts/playfair-display/PlayfairDisplay-Regular', 400, normal);
-@include declare-font-face('Playfair Display', './assets/fonts/playfair-display/PlayfairDisplay-Bold', 700, normal);
-@include declare-font-face('Playfair Display', './assets/fonts/playfair-display/PlayfairDisplay-Italic', 400, italic);
-@include declare-font-face('Playfair Display', './assets/fonts/playfair-display/PlayfairDisplay-BoldItalic', 700, italic);
+@include declare-font-face('Playfair Display', './../assets/fonts/playfair-display/PlayfairDisplay-Regular', 400, normal);
+@include declare-font-face('Playfair Display', './../assets/fonts/playfair-display/PlayfairDisplay-Bold', 700, normal);
+@include declare-font-face('Playfair Display', './../assets/fonts/playfair-display/PlayfairDisplay-Italic', 400, italic);
+@include declare-font-face('Playfair Display', './../assets/fonts/playfair-display/PlayfairDisplay-BoldItalic', 700, italic);
+
+// Poly Sans 
+@include declare-font-face('Poly Sans', './../assets/fonts/polysans/PolySans-Slim', 300, normal);
 
   
 body {

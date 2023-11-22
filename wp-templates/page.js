@@ -1,5 +1,7 @@
 import { gql } from '@apollo/client';
+import { useEffect } from 'react';
 import * as MENUS from '../constants/menus';
+import { ThemeProvider } from '../context/ThemeContext';
 import { BlogInfoFragment } from '../fragments/GeneralSettings';
 import {
   Header,
@@ -26,6 +28,15 @@ export default function Component(props) {
   const footerMenu = props?.data?.footerMenuItems?.nodes ?? [];
   const { title, content, featuredImage } = props?.data?.page ?? { title: '' };
 
+  useEffect( () => {
+    (
+      async () => {
+          const LocomotiveScroll = (await import('locomotive-scroll')).default
+          const locomotiveScroll = new LocomotiveScroll();
+      }
+    )()
+  }, [])
+
   return (
     <>
       <SEO
@@ -34,19 +45,21 @@ export default function Component(props) {
         imageUrl={featuredImage?.node?.sourceUrl}
       />
       <GlobalFields />
-      <Header
-        title={siteTitle}
-        description={siteDescription}
-        menuItems={primaryMenu}
-      />
-      <Main>
-        <>
-          <Container>
-            <ContentWrapper content={content} />
-          </Container>
-        </>
-      </Main>
-      <Footer title={siteTitle} menuItems={footerMenu} />
+      <ThemeProvider>
+        <Header
+          title={siteTitle}
+          description={siteDescription}
+          menuItems={primaryMenu}
+        />
+        <Main>
+          <>
+            <Container>
+              <ContentWrapper content={content} />
+            </Container>
+          </>
+        </Main>
+        <Footer title={siteTitle} menuItems={footerMenu} />
+      </ThemeProvider>
     </>
   );
 }

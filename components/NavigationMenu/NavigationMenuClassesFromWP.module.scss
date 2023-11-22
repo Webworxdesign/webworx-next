@@ -6,10 +6,10 @@
 .button {
 	a {
 		@media (min-width: $breakpoint-small) {
-			background-color: var(--wpe--color--accent);
+			background-color: var(--wwx--color--accent);
 			border-radius: 100px;
-			border: var(--wpe--border--light);
-			color: var(--wpe--color--white);
+			border: var(--wwx--border--light);
+			color: var(--wwx--color--white);
 			font-size: 92%;
 			padding: 0.5rem 1rem;
 			text-decoration: none;
@@ -17,8 +17,8 @@
 
 			&:hover,
 			&:focus {
-				background-color: var(--wpe--color--accent--dark);
-				color: var(--wpe--color--white);
+				background-color: var(--wwx--color--accent--dark);
+				color: var(--wwx--color--white);
 			}
 		}
 	}

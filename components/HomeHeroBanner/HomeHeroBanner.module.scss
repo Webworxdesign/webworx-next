@@ -1,0 +1,51 @@
+@import "styles/breakpoints";
+
+.home-hero-banner{
+    position: relative;
+    width: 100%;
+    padding: 120px 0;
+    h1, h2, h3{
+        position: relative;
+        z-index: 2;
+    }
+    h1 {
+        font-family: 'Poly Sans';
+        font-weight: 300;
+        font-style: normal;
+        font-size: 180px;
+        line-height: 100%;
+        color: var(--wwx--color--black);
+        margin-left: 8%;
+    }
+    h2 {
+        font-family: 'Open Sans';
+        font-weight: 300;
+        font-style: normal;
+        font-size: 55px;
+        line-height: 100%;
+        color: var(--wwx--color--black);
+    }
+    h3 {
+        font-family: 'Open Sans';
+        font-size: 40px;
+        font-style: normal;
+        font-weight: 300;
+        line-height: 120%;
+        color: var(--wwx--color--black);
+        margin-left: 16%;
+        &.banner-description {
+            opacity: 0;
+        }
+    }
+    .banner-img {
+        display: flex;
+        position: relative;
+        width: calc( (100vw - var(--wwx--content--max-width)) / 2 + var(--wwx--content--max-width) - var(--wwx--content--padding--right) );
+        margin-left: calc((100vw - var(--wwx--content--max-width)) / 2 + 40px);
+        background-color: #eeeeee;
+        background-size: cover;
+        background-position: center;
+        border-radius: 30px 0px 0px 30px;
+        overflow: hidden;
+    }
+}

@@ -8,8 +8,8 @@
 
 code {
 	font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New', monospace;
-	background-color: var(--wpe--code--background-color);
-	color: var(--wpe--code--color);
+	background-color: var(--wwx--code--background-color);
+	color: var(--wwx--code--color);
 	padding: 0.25rem 0.5rem;
 	border-radius: 4px;
 	white-space: nowrap;
@@ -24,11 +24,11 @@ img {
 }
 
 ::-moz-selection {
-	color: var(--wpe--color--white);
-	background-color: var(--wpe--color--accent);
+	color: var(--wwx--color--white);
+	background-color: var(--wwx--color--accent);
 }
 
 ::selection {
-	color: var(--wpe--color--white);
-	background-color: var(--wpe--color--accent);
+	color: var(--wwx--color--white);
+	background-color: var(--wwx--color--accent);
 }

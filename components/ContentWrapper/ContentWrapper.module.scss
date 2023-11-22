@@ -1,5 +1,5 @@
 .component {
-	max-width: var(--wpe--content--max-width);
+	max-width: var(--wwx--content--max-width);
 	margin: 0 auto;
 	line-height: 1.6875;
 
@@ -21,12 +21,12 @@
 		}
 
 		a {
-			color: var(--wpe--link--color);
+			color: var(--wwx--link--color);
 			text-decoration: underline;
 
 			&:hover,
 			&:focus {
-				color: var(--wpe--link--color);
+				color: var(--wwx--link--color);
 				text-decoration: none;
 			}
 		}
@@ -105,7 +105,7 @@
 		}
 
 		thead th {
-			border-bottom: 1px solid var(--wpe--color--border);
+			border-bottom: 1px solid var(--wwx--color--border);
 			padding-bottom: 0.5em;
 		}
 
@@ -115,7 +115,7 @@
 		}
 
 		tr {
-			border-bottom: 1px solid var(--wpe--color--border);
+			border-bottom: 1px solid var(--wwx--color--border);
 		}
 
 		td {

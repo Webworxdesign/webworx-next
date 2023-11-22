@@ -1,8 +1,5 @@
 // Utility classes
 
-.text-center {
-	text-align: center;
-}
 .sr-only, .screen-reader-text {
 	position: absolute;
 	width: 1px;
@@ -21,4 +18,233 @@
 		overflow: auto;
 		clip: auto;
 	}
+}
+
+body {
+    // Margin
+    @each $margin_abbr, $margin_name in ("t": "top", "r": "right", "b": "bottom", "l": "left") {
+        @for $i from 0 through 20 {
+            .m#{$margin_abbr}-#{$i} {
+                margin-#{$margin_name}: 10px * $i!important;
+            }
+            .m-#{$i} {
+                margin-#{$margin_name}: 10px * $i!important;
+            }
+            @media only screen and (min-width: 781px) {
+                .m#{$margin_abbr}-md-#{$i} {
+                    margin-#{$margin_name}: 10px * $i!important;
+                }
+                .m-md-#{$i} {
+                    margin-#{$margin_name}: 10px * $i!important;
+                }
+            }
+        }
+    }
+    .m-0 {
+        padding: 0;
+    }
+    .mx-0 {
+        margin-left: 0;
+        margin-right: 0;
+    }
+    .mx-auto {
+        margin-left: auto;
+        margin-right: auto;
+    } 
+    .my-0 {
+        margin-top: 0;
+        margin-bottom: 0;
+    }
+      
+    // Padding
+    @each $padding_abbr, $padding_name in ("t": "top", "r": "right", "b": "bottom", "l": "left") {
+        @for $i from 0 through 5 {
+            .p#{$padding_abbr}-#{$i} {
+                padding-#{$padding_name}: 10px * $i;
+            }
+            .p-#{$i} {
+                padding-#{$padding_name}: 10px * $i;
+            }
+        }
+    }
+    .p-0 {
+        padding: 0;
+    }
+    .px-0 {
+        padding-left: 0;
+        padding-right: 0;
+    }
+    .py-0 {
+        padding-top: 0;
+        padding-bottom: 0;
+    }
+    
+    // Text Align
+    .text-left { text-align: left; }
+    .text-center { text-align: center; }
+    .text-right { text-align: right; } 
+    @media only screen and (min-width: 781px) {
+        .text-md-left { text-align: left; }
+        .text-md-center { text-align: center; }
+        .text-md-right { text-align: right; }
+    }
+
+    // Displays 
+    .d-none { display: none; }
+    .d-inline { display: inline; }
+    .d-inline-block { display: inline-block; }
+    .d-block { display: block; }
+    .d-flex { display: flex; }
+    .d-inline-flex { display: inline-flex; }
+
+    // Flexbox 
+    .flex-row { flex-direction: row; }
+    .flex-column { flex-direction: column; }
+    .flex-wrap { flex-wrap: wrap; }
+    .flex-nowrap { flex-wrap: nowrap; }
+    .flex-align-start { align-items: flex-start; }
+    .flex-align-end { align-items: flex-end; }
+    .flex-align-center { align-items: center; }
+
+
+    // Order 
+    .order-1 {
+        order: 1;
+    }
+    .order-2 {
+        order: 2;
+    }
+    .order-3 {
+        order: 3;
+    }
+    .justified-center {
+        justify-content: center;
+    }
+    .justified-between {
+        justify-content: space-between;
+    }
+    .justified-around {
+        justify-content: space-around;
+    }
+    .justified-start {
+        justify-content: flex-start;
+    }
+    .justified-end {
+        justify-content: flex-end;
+    }
+
+    @media only screen and (min-width: 781px) {
+        .d-md-none { 
+            display: none; 
+        }
+        .d-md-inline {
+             display: inline; 
+            }
+        .d-md-inline-block { 
+            display: inline-block; 
+        }
+        .d-md-block { 
+            display: block; 
+        }
+        .d-md-flex { 
+            display: flex; 
+        }
+        .d-md-inline-flex { 
+            display: inline-flex; 
+        }
+        .order-md-1 {
+            order: 1;
+        }
+        .order-md-2 {
+            order: 2;
+        }
+        .order-md-3 {
+            order: 3;
+        }
+        .justified-md-center {
+            justify-content: center;
+        }
+        .justified-md-between {
+            justify-content: space-between;
+        }
+        .justified-md-around {
+            justify-content: space-around;
+        }
+        .justified-md-start {
+            justify-content: flex-start;
+        }
+        .justified-md-end {
+            justify-content: flex-end;
+        }
+    }
+
+
+    // Max Widths
+    @each $max_width_abbr, $max_width_name in (
+        "250": "250px", 
+        "300": "300px", 
+        "350": "350px", 
+        "400": "400px", 
+        "450": "450px", 
+        "500": "500px", 
+        "550": "550px", 
+        "600": "600px", 
+        "650": "650px", 
+        "700": "700px", 
+        "750": "750px", 
+        "800": "800px", 
+        "850": "850px", 
+        "900": "900px"
+        ) {
+        div.max-w-#{$max_width_abbr} {
+            max-width: #{$max_width_name};
+        }
+        .wp-block-buttons > .wp-block-button.max-w-#{$max_width_abbr} {
+            max-width: #{$max_width_name};
+        }
+        @media only screen and (min-width: 781px) {
+            div.max-w-md-#{$max_width_abbr} {
+                max-width: #{$max_width_name};
+            }
+            .wp-block-buttons > .wp-block-button.max-w-md-#{$max_width_abbr} {
+                max-width: #{$max_width_name};
+            }
+        }
+    }
+
+    // Position 
+    @each $position_abbr, $position_name in (
+        "position-static": "static", 
+        "position-relative": "relative", 
+        "position-absolute": "absolute", 
+        "position-fixed": "fixed", 
+        "position-sticky": "sticky"
+        ) {
+        .#{$position_abbr} {
+            position: #{$position_name};
+        }
+    }
+
+    .text-decoration-none, .text-decoration-none * {
+        text-decoration: none;
+    }
+
+    .gap-none {
+        gap: 0;
+    }
+    .space-right {
+        margin-right: 3px;
+    }
+    .desktop-only {
+        display: none;
+        @media only screen and (min-width: 781px) {
+            display: block;
+        }
+    }
+    .mobile-only {
+        display: block;
+        @media only screen and (min-width: 781px) {
+            display: none;
+        }
+    }
 }

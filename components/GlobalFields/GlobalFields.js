@@ -3,15 +3,20 @@ import HeaderSettings from '../../constants/HeaderSettings';
 
 
 export default function GlobalFields() {
-  const { containerWidth, tag, contentPadding, contentPaddingMobile } = ThemeSettings();
+  const { containerWidth, tag, contentPadding } = ThemeSettings();
   const { headerPadding, headerPaddingMobile } = HeaderSettings();
+  console.log(contentPadding);
+  const { contentPaddingLeft = null, contentPaddingRight = null, contentPaddingRightMobile = null, contentPaddingLeftMobile = null } = contentPadding ? contentPadding : {};
 
   const headerPaddingVariable = headerPadding ? '--inside--header--padding: ' + headerPadding + ';' : ''; 
   const headerPaddingMobileVariable = headerPaddingMobile ? '--inside--header--padding--mobile: ' + headerPaddingMobile + ';' : '';
-  const containerWidthVariable = containerWidth ? '--wpe--container--max-width: ' +  containerWidth + 'px;' : '--wpe--container--max-width: 991px;';
-  const contentMaxWidthVariable = containerWidth ? '--wpe--content--max-width: ' +  containerWidth + 'px;' : '--wpe--content--max-width: 991px;';
-  const contentPaddingVariable = contentPadding ? '--wpe--content--padding: ' + contentPadding + ';' : '';
-  const contentPaddingMobileVariable = contentPaddingMobile ? '--wpe--content--padding--mobile: ' + contentPaddingMobile + ';' : '';
+  const containerWidthVariable = containerWidth ? '--wwx--container--max-width: ' +  containerWidth + 'px;' : '--wwx--container--max-width: 991px;';
+  const contentMaxWidthVariable = containerWidth ? '--wwx--content--max-width: ' +  containerWidth + 'px;' : '--wwx--content--max-width: 991px;';
+  const contentPaddingLeftVariable = contentPaddingLeft ? '--wwx--content--padding--left: ' +  contentPaddingLeft + 'px;' : '--wwx--content--padding--left: 0px;';
+  const contentPaddingRightVariable = contentPaddingRight ? '--wwx--content--padding--right: ' +  contentPaddingRight + 'px;' : '--wwx--content--padding--right: 0px;';
+  const contentPaddingRightMobileVariable = contentPaddingRightMobile ? '--wwx--content--padding--right--mobile: ' +  contentPaddingRightMobile + 'px;' : '--wwx--content--padding--right--mobile: 0px;';
+  const contentPaddingLeftMobileVariable = contentPaddingLeftMobile ? '--wwx--content--padding--left--mobile: ' +  contentPaddingLeftMobile + 'px;' : '--wwx--content--padding--left--mobile: 0px;';
+
 
   // Typography 
   const tags = tag ? tag : [];
@@ -41,8 +46,10 @@ export default function GlobalFields() {
           ${headerPaddingMobileVariable}
           ${containerWidthVariable}
           ${contentMaxWidthVariable}
-          ${contentPaddingVariable}
-          ${contentPaddingMobileVariable}
+          ${contentPaddingLeftVariable}
+          ${contentPaddingRightVariable}
+          ${contentPaddingRightMobileVariable}
+          ${contentPaddingLeftMobileVariable}
           ${tagVariables.join('').replace(/[\n\r]+/g, '')}
         }
       `}</style>

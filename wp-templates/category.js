@@ -1,5 +1,7 @@
 import { gql } from '@apollo/client';
+import { useEffect } from 'react';
 import * as MENUS from '../constants/menus';
+import { ThemeProvider } from '../context/ThemeContext';
 import { BlogInfoFragment } from '../fragments/GeneralSettings';
 import {
   Header,
@@ -25,29 +27,31 @@ export default function Component(props) {
     <>
       <SEO title={siteTitle} description={siteDescription} />
       <GlobalFields />
-      <Header
-        title={siteTitle}
-        description={siteDescription}
-        menuItems={primaryMenu}
-      />
-      <Main>
-        <>
-          <EntryHeader title={`Category: ${name}`} />
-          <Container>
-            {posts.edges.map((post) => (
-              <Post
-                title={post.node.title}
-                content={post.node.content}
-                date={post.node.date}
-                author={post.node.author?.node.name}
-                uri={post.node.uri}
-                featuredImage={post.node.featuredImage?.node}
-              />
-            ))}
-          </Container>
-        </>
-      </Main>
-      <Footer title={siteTitle} menuItems={footerMenu} />
+      <ThemeProvider>
+        <Header
+          title={siteTitle}
+          description={siteDescription}
+          menuItems={primaryMenu}
+        />
+        <Main>
+          <>
+            <EntryHeader title={`Category: ${name}`} />
+            <Container>
+              {posts.edges.map((post) => (
+                <Post
+                  title={post.node.title}
+                  content={post.node.content}
+                  date={post.node.date}
+                  author={post.node.author?.node.name}
+                  uri={post.node.uri}
+                  featuredImage={post.node.featuredImage?.node}
+                />
+              ))}
+            </Container>
+          </>
+        </Main>
+        <Footer title={siteTitle} menuItems={footerMenu} />
+      </ThemeProvider>
     </>
   );
 }

@@ -3,10 +3,12 @@
 .component {
 	margin-right: auto;
 	margin-left: auto;
-	max-width: var(--wpe--container--max-width);
-	padding: var(--wpe--content--padding);
+	max-width: var(--wwx--container--max-width);
+	padding-left: var(--wwx--content--padding--left);
+	padding-right: var(--wwx--content--padding--right);
 
 	@media (max-width: $breakpoint-small){
-		padding: var(--wpe--content--padding--mobile);
+		padding-left: var(--wwx--content--padding--left--mobile);
+		padding-right: var(--wwx--content--padding--right--mobile);
 	}
 }

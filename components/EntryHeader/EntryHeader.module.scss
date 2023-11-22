@@ -1,14 +1,14 @@
 @import 'styles/breakpoints';
 
 .component {
-	color: var(--wpe--color--white);
+	color: var(--wwx--color--white);
 	position: relative;
 	overflow: hidden;
 	margin-bottom: 2rem;
 }
 
 .has-image {
-	--wpe--color--title: var(--wpe--color--white);
+	--wwx--color--title: var(--wwx--color--white);
 }
 
 .text,
@@ -24,11 +24,11 @@
 }
 
 .title {
-	color: var(--wpe--color--title);
+	color: var(--wwx--color--title);
 }
 
 .byline {
-	font-weight: var(--wpe--font-weight--medium);
+	font-weight: var(--wwx--font-weight--medium);
 	font-size: 1.2rem;
 }
 

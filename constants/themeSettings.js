@@ -6,19 +6,22 @@ query theme_settings {
     themeGeneralSettings {
       containerWidth
       contentLayout
-      contentPadding
-      contentPaddingMobile
-      fieldGroupName
-      logoWidth
+      contentPadding {
+        contentPaddingLeft
+        contentPaddingRight
+        contentPaddingRightMobile
+        contentPaddingLeftMobile
+      }
       logo {
+        databaseId
         sourceUrl
       }
+      logoWidth
       siteIcon {
+        databaseId
         sourceUrl
       }
       tag {
-        tagType
-        fieldGroupName
         fontSizeDesktop
         fontSizeMobile
         fontSizeTablet
@@ -31,6 +34,7 @@ query theme_settings {
         marginBottomDesktop
         marginBottomMobile
         marginBottomTablet
+        tagType
       }
     }
   }
