@@ -5,7 +5,7 @@
 	// Color Definitions.
 	--wwx--color--black: #222;
 	--wwx--color--white: #fff;
-	--wwx--color--offwhite: #f7f7f7;
+	--wwx--color--offwhite: #F5F5F5;
 	--wwx--color--neutral: rgba(175,184,193,0.2);
 	--wwx--color--slate: #0a2540;
 	--wwx--color--accent: #F1EC6F;
@@ -30,6 +30,33 @@
 	--wwx--heading--color: var(--wwx--color--accent);
 	--wwx--border--light: 1px solid var(--wwx--color--neutral);
 	--wwx--border--extra-light: 1px solid var(--wwx--color--offwhite);
+
+	.dark-mode {
+		--wwx--color--black: #fff;
+		--wwx--color--white: #222;
+		--wwx--color--offwhite: #0a2540;
+		--wwx--color--neutral: rgba(175,184,193,0.2);
+		--wwx--color--slate: #0a2540;
+		--wwx--color--accent: #F1EC6F; 
+		--wwx--color--accent--dark: #F5F5F5;
+		--wwx--color--title: #fff;
+		--wwx--link--color: #F1EC6F;
+		--wwx--code--color: #fff;
+		--wwx--code--background-color: #0a2540;
+		--wwx--header--color: #fff;
+		--wwx--header--background-color: #222222;
+		--wwx--navigation-menu--color: #fff;
+		--wwx--navigation-menu--color--hover: #F1EC6F;
+		--wwx--navigation-menu--background-color: transparent;
+		--wwx--dropdown--background-color: #222222;
+		--wwx--main--color: #fff;
+		--wwx--main--background-color: #222222;
+		--wwx--footer--color: #fff;
+		--wwx--footer--background-color: #222222;
+		--wwx--heading--color: #F1EC6F;
+		--wwx--border--light: 1px solid var(--wwx--color--offwhite);
+		--wwx--border--extra-light: 1px solid var(--wwx--color--offwhite);
+	}
 
 	// Type.
 	--wwx--font-weight--light: 300;
@@ -295,11 +322,11 @@
 	// Spacing.
 	--wwx--content--max-width: 620px;
 	--wwx--section--padding-y: 3rem;
-	--wwx--content--padding--left: 15px;
-	--wwx--content--padding--right: 15px;
-	--wwx--content--padding--left--mobile: 15px;
-	--wwx--content--padding--right--mobile: 15px;
-	--wwx--container--max-width: 1000px;
+	--wwx--content--padding--left: 40px;
+	--wwx--content--padding--right: 40px;
+	--wwx--content--padding--left--mobile: 20px;
+	--wwx--content--padding--right--mobile: 20px;
+	--wwx--container--max-width: 1280px;
 
 	// Shadows.
 	--wwx--shadow--large: 0 50px 120px -40px rgba(150, 150, 150, 0.2), 0 20px 60px -30px rgba(0, 0, 0, 0.5);
@@ -307,13 +334,4 @@
 	// Header 
 	--inside--header--padding: 15px 30px;
 	--inside--header--padding--mobile: 10px 15px;
-}
-
-.dark {
-	--wwx--color--black: #fff;
-	--wwx--color--white: #000;
-	--wwx--color--offwhite: #f7f7f7;
-	--wwx--color--neutral: rgba(175,184,193,0.2);
-	--wwx--color--slate: #0a2540;
-	--wwx--color--accent: #F1EC6F;
 }

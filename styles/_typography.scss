@@ -29,13 +29,9 @@
 // Poly Sans 
 @include declare-font-face('Poly Sans', './../assets/fonts/polysans/PolySans-Slim', 300, normal);
 
-  
-body {
-	font-family: 'Open Sans', sans-serif;
-}
-
 h1, h2, h3, h4, h5, h6 {
-    font-family: Playfair Display, serif;
+    font-family: 'Poly Sans';
+    font-weight: 300; 
 	margin: 0 0 1rem;
 }
 
@@ -45,6 +41,7 @@ a {
 
 
 body {
+	font-family: 'Open Sans', sans-serif;
     font-size: var(--body--font--size--desktop);
     line-height: var(--body--line--height--desktop);
     margin-left: 0;
@@ -101,6 +98,12 @@ body {
         line-height: var(--site-description--line--height--mobile);
         margin-bottom: var(--site-description--margin--bottom--mobile);
     }
+}
+
+.section-title {
+    font-size: 100px;
+    font-weight: 300;
+    line-height: 100%;
 }
 
 header {
@@ -261,4 +264,8 @@ h6 {
         line-height: var(--h6--line--height--mobile);
         margin-bottom: var(--h6--margin--bottom--mobile);
     }
+}
+
+p {
+    margin-top: 0;
 }

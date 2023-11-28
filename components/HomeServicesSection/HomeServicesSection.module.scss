@@ -1,0 +1,26 @@
+@import "styles/breakpoints";
+
+.home-services-section {
+    padding: 80px 0 80px;
+    background-color: var(--wwx--color--offwhite);
+
+    .scroll-section-outer {
+        overflow: hidden;
+    }
+    
+    .scroll-section-inner {
+        height: 100vh;
+        width: 400vw;
+        display: flex;
+        flex-direction: row;
+        position: relative;
+    }
+    
+    .scroll-section {
+        height: 100vh;
+        width: 100vw;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+}

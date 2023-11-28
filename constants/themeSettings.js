@@ -36,6 +36,9 @@ query theme_settings {
         marginBottomTablet
         tagType
       }
+      featuredHeroVideo {
+        mediaItemUrl
+      }
     }
   }
 }

@@ -1,7 +1,6 @@
 import { useQuery, gql } from '@apollo/client';
-import { useEffect } from 'react';
+import {  useEffect } from 'react';
 import * as MENUS from '../constants/menus';
-import { ThemeProvider } from '../context/ThemeContext';
 import { BlogInfoFragment } from '../fragments/GeneralSettings';
 import {
   Header,
@@ -14,6 +13,8 @@ import {
 } from '../components';
 import { GlobalFields } from '../components/GlobalFields';
 import { HomeHeroBanner } from '../components/HomeHeroBanner';
+import { ProjectScroller } from '../components/ProjectScroller';
+import HomeServiceSection from '../components/HomeServicesSection/HomeSevicesSection';
 
 export default function Component() {
 
@@ -39,17 +40,24 @@ export default function Component() {
     <>
       <SEO title={siteTitle} description={siteDescription} />
       <GlobalFields />
-      <ThemeProvider>
-        <Header
-          title={siteTitle}
-          description={siteDescription}
-          menuItems={primaryMenu}
-        />
-        <Main>
-          <HomeHeroBanner />
-        </Main>
-        <Footer title={siteTitle} menuItems={footerMenu} />
-      </ThemeProvider>
+      <Header
+        title={siteTitle}
+        description={siteDescription}
+        menuItems={primaryMenu}
+      />
+
+      <Main>
+
+        <HomeHeroBanner />
+
+        <ProjectScroller />
+
+        <HomeServiceSection />
+
+      </Main>
+
+      <Footer title={siteTitle} menuItems={footerMenu} />
+        
     </>
   );
 }

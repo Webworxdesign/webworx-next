@@ -20,7 +20,12 @@
 	}
 }
 
+::selection {
+    background: #F1EC6F;
+}
+
 body {
+    overflow-x: hidden;
     // Margin
     @each $margin_abbr, $margin_name in ("t": "top", "r": "right", "b": "bottom", "l": "left") {
         @for $i from 0 through 20 {
@@ -245,6 +250,27 @@ body {
         display: block;
         @media only screen and (min-width: 781px) {
             display: none;
+        }
+    }
+}
+
+// Container 
+.container {
+    max-width: var(--wwx--container--max-width);
+    width: 100%;
+    padding-right: var(--wwx--content--padding--right);
+    padding-left: var(--wwx--content--padding--left);
+    margin-right: auto;
+    margin-left: auto;
+    @media only screen and (max-width: 781px) {
+        padding-right: var(--wwx--content--padding--right--mobile);
+        padding-left: var(--wwx--content--padding--left--mobile);
+    }
+}
+@each $container_abbr, $container_size in ("sm": "540", "md": "781", "lg": "960", "xl": "1140", "xxl": "1320") { 
+    @media only screen and (min-width: #{$container_size}px) {
+        .container-#{$container_abbr} {
+            max-width: #{$container_size}px;
         }
     }
 }

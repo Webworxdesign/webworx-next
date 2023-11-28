@@ -8,3 +8,7 @@
 @import 'blocks';
 @import 'utilities';
 @import 'typography';
+
+body {
+    background-color: var(--wwx--color--white);
+}

@@ -1,7 +1,6 @@
 import { gql } from '@apollo/client';
 import { useEffect } from 'react';
 import * as MENUS from '../constants/menus';
-import { ThemeProvider } from '../context/ThemeContext';
 import { BlogInfoFragment } from '../fragments/GeneralSettings';
 import {
   Header,
@@ -45,21 +44,19 @@ export default function Component(props) {
         imageUrl={featuredImage?.node?.sourceUrl}
       />
       <GlobalFields />
-      <ThemeProvider>
-        <Header
-          title={siteTitle}
-          description={siteDescription}
-          menuItems={primaryMenu}
-        />
-        <Main>
-          <>
-            <Container>
-              <ContentWrapper content={content} />
-            </Container>
-          </>
-        </Main>
-        <Footer title={siteTitle} menuItems={footerMenu} />
-      </ThemeProvider>
+      <Header
+        title={siteTitle}
+        description={siteDescription}
+        menuItems={primaryMenu}
+      />
+      <Main>
+        <>
+          <Container>
+            <ContentWrapper content={content} />
+          </Container>
+        </>
+      </Main>
+      <Footer title={siteTitle} menuItems={footerMenu} />
     </>
   );
 }

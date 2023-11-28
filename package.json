@@ -16,12 +16,13 @@
     "@wordpress/base-styles": "^4.26.0",
     "@wordpress/block-library": "^7.19.0",
     "classnames": "^2.3.1",
+    "framer-motion": "^10.16.5",
     "graphql": "^16.6.0",
     "gsap": "^3.12.1",
     "locomotive-scroll": "^5.0.0-beta.8",
     "next": "13.4.6",
     "react": "18.2.0",
-    "react-dom": "18.2.0", 
+    "react-dom": "18.2.0",
     "sass": "^1.54.9"
   },
   "engines": {
