@@ -42,7 +42,7 @@ export default function HomeHeroBanner() {
             .fromTo( 
                 bannerImgRef.current, 
                 { height: 140, width: 230, borderRadius: "40px", x: 650, marginTop: -150, duration: 50 },
-                { height: "80vh", width: bannerMaxWidth, borderTopRightRadius: 0, borderBottomRightRadius: 0, x: 10, marginTop: 0, duration: 5  }
+                { height: "75vh", width: bannerMaxWidth, borderTopRightRadius: 0, borderBottomRightRadius: 0, x: 10, marginTop: 0, duration: 5  }
             )
             .fromTo(
                 bannerDescRef.current, 

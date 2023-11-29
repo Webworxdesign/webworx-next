@@ -5,8 +5,7 @@ import gsap from 'gsap';
 import { ScrollTrigger } from 'gsap/dist/ScrollTrigger';
 import className from 'classnames/bind';
 import styles from './ProjectScroller.module.scss';
-import { Container, ContentWrapper} from '..'
-import ThemeSettings from '../../constants/themeSettings';
+import ProjectsPosts from '../../constants/ProjectsPosts';
 
 let cx = className.bind(styles);
 
@@ -18,10 +17,6 @@ export default function ProjectScroller({ }) {
     gsap.registerPlugin(ScrollTrigger);
   
     useLayoutEffect(() => { 
-
-        console.log(document.documentElement.clientWidth)
-
-
 
         const sectionScrollWidth = Number(sectionRef.current.scrollWidth) - Number(sectionRef.current.offsetWidth);
 
@@ -48,6 +43,9 @@ export default function ProjectScroller({ }) {
             pin.kill();
         };
     }, []);
+    
+    const { nodes } = ProjectsPosts();
+    const projects = nodes ? nodes : [];
 
     return (
         <section className={cx('project-horizontal-scroller')} ref={triggerRef}>
@@ -57,24 +55,25 @@ export default function ProjectScroller({ }) {
             </div>
 
             <div className={cx('pin-wrap')} ref={sectionRef}>
-                <div className={cx('project-item')}>
-                    1
-                </div>
-                <div className={cx('project-item')}>
-                    2
-                </div>
-                <div className={cx('project-item')}>
-                    3
-                </div>
-                <div className={cx('project-item')}>
-                    4
-                </div>
-                <div className={cx('project-item')}>
-                    5
-                </div>
-                <div className={cx('project-item')}>
-                    6
-                </div>
+                { projects.map((project, index) => (
+                    
+                    <div className={cx('project-item')} key={index}>
+                        <div className={cx('project-image')}>
+                            {project.featuredImage.node.mediaItemUrl ? (
+                                <Image
+                                    src={project.featuredImage.node.mediaItemUrl}
+                                    alt={project.title}
+                                    width={500}
+                                    height={500}
+                                />
+                             ) : (
+                                <div className={cx('no-image')}></div>
+                             )}
+                        </div>
+                        <h3 className={cx('project-title')}>{project.title}</h3>
+
+                    </div>
+                ))}
             </div>         
         </section>
     )
