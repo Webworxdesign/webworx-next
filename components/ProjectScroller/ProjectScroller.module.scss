@@ -2,17 +2,13 @@
 
 .project-horizontal-scroller {
     padding: 60px 0 60px;
-    .scroll-section-outer {
-        overflow: hidden;
-    }
     .pin-wrap {
         display: flex;
         justify-content: flex-start;
         align-items: center;
         min-height: 800px; 
-        padding: 50px var(--wwx--content--padding--left) 50px var(--wwx--content--padding--right);
-        max-width: var(--wwx--container--max-width);
-        margin: 0 auto;
+        padding-bottom: 20px;
+        width: auto;
         @media (max-width: 767px) {
             padding: 50px var(--wwx--content--padding--left--mobile) 50px var(--wwx--content--padding--right--mobile);
         }

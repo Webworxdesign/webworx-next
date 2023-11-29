@@ -5,6 +5,7 @@ import Image from 'next/image';
 import gsap from 'gsap';
 import className from 'classnames/bind';
 import styles from './ServiceModal.module.scss';
+import ViewArrowIcon from '../../../assets/svg/ViewArrowIcon';
 
 let cx = className.bind(styles);
 
@@ -44,30 +45,34 @@ export default function ServiceModal({modal, services}) {
     })
   }, [])
 
-    return (
-      <>
-          <motion.div ref={modalContainer} variants={scaleAnimation} initial="initial" animate={active ? "enter" : "closed"} className={cx('serviceModalContainer')}>
-              <div style={{top: index * -100 + "%"}} className={cx('serviceModalSlider')}>
-              {
-                  services.map( (service, index) => {
+  return (
+    <>
+        <motion.div ref={modalContainer} variants={scaleAnimation} initial="initial" animate={active ? "enter" : "closed"} className={cx('serviceModalContainer')}>
+            <div style={{top: index * -100 + "%"}} className={cx('serviceModalSlider')}>
+            {
+                services.map( (service, index) => {
                   const { title, featuredImage, featuredSectionBackgroundColour } = service
 
                   return <div className={cx('serviceModal')} style={{backgroundColor: featuredSectionBackgroundColour}} key={`modal_${index}`}>
-                      {featuredImage && (
-                        <Image 
-                          src={featuredImage.node.sourceUrl}
-                          width={300}
-                          height={0}
-                          alt={title}
-                          />
-                      )}
+                      {
+                        featuredImage.node.sourceUrl ? (
+                          <Image 
+                            src={featuredImage.node.sourceUrl}
+                            width={300}
+                            height={0}
+                            alt={title}
+                            />
+                        ) : null
+                      }
                   </div>
-                  })
-              }
-              </div>
-          </motion.div>
-          <motion.div ref={cursor} className={styles.cursor} variants={scaleAnimation} initial="initial" animate={active ? "enter" : "closed"}></motion.div>
-          <motion.div ref={cursorLabel} className={styles.cursorLabel} variants={scaleAnimation} initial="initial" animate={active ? "enter" : "closed"}>View</motion.div>
-      </>
-    )
+                })
+            }
+            </div>
+        </motion.div>
+        <motion.div ref={cursor} className={styles.cursor} variants={scaleAnimation} initial="initial" animate={active ? "enter" : "closed"}></motion.div>
+        <motion.div ref={cursorLabel} className={styles.cursorLabel} variants={scaleAnimation} initial="initial" animate={active ? "enter" : "closed"}>
+          <ViewArrowIcon />
+        </motion.div>
+    </>
+  )
 }

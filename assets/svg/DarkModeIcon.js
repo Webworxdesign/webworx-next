@@ -1,10 +1,10 @@
-
+'use client';
 import React from 'react';
 
 const DarkModeIcon = (props) => {
     return (
-        <svg xmlns="http://www.w3.org/2000/svg" viewBox="18 0 19 19" width="30px" height="30px">
-            <circle fill="#ffffff" cx="27.5" cy="9.5" r="9.5"/>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="18 0 19 19" width="30px" height="30px" fill="#fff">
+            <circle cx="27.5" cy="9.5" r="9.5"/>
             <g>
                 <path d="M30.501,8.523c0.181,0.291,0.233,0.594,0.159,0.909l0.038,0.009c0.073-0.314,0.257-0.563,0.548-0.742
                 c0.291-0.18,0.593-0.233,0.908-0.158l0.009-0.039c-0.313-0.074-0.562-0.256-0.741-0.548c-0.18-0.292-0.232-0.594-0.159-0.908

@@ -9,6 +9,7 @@ import { Container, ContentWrapper} from './../../components'
 import bannerImg from './../../assets/images/home-banner-img.jpg';
 import bannerCards from './../../assets/images/banner-cards.jpg';
 import ThemeSettings from './../../constants/themeSettings';
+import AnimatedText from '../AnimatedText/Animatedtext';
 
 let cx = className.bind(styles);
 
@@ -55,8 +56,8 @@ export default function HomeHeroBanner() {
         <div className={cx('home-hero-banner')}>
             
             <div className="container" ref={heroContainer}>
-                <h2>We build engaging</h2>
-                <h1 className="mb-0">Digital</h1>
+                <h2><AnimatedText text="We build engaging" /></h2>
+                <h1 className="mb-0"><AnimatedText text="Digital" delay={1} /></h1>
                 
                 <div className={cx('banner-img')} ref={bannerImgRef}>
                     {heroVideo ? (
@@ -69,7 +70,7 @@ export default function HomeHeroBanner() {
                     
                 </div>
                 
-                <h1>Experiences</h1>
+                <h1><AnimatedText text="Experiences" delay={2} /></h1>
                 <h3 className={cx('banner-description')} ref={bannerDescRef}>that help businesses to connect with customers in a meaningful way</h3>
             </div>
                             

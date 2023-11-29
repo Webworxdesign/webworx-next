@@ -1,3 +1,5 @@
+'use client';
+import React from 'react';
 
 function LightModeIcon() {
     return (
@@ -31,5 +33,4 @@ function LightModeIcon() {
 }
 
 export default LightModeIcon;
-import React from 'react';
 
