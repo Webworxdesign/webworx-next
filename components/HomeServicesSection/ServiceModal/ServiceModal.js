@@ -15,7 +15,6 @@ const scaleAnimation = {
     closed: {scale: 0, x:"-50%", y:"-50%", transition: {duration: 0.4, ease: [0.32, 0, 0.67, 0]}}
 }
 
-
 export default function ServiceModal({modal, services}) {
 
   const { active, index } = modal;
@@ -51,15 +50,17 @@ export default function ServiceModal({modal, services}) {
             <div style={{top: index * -100 + "%"}} className={cx('serviceModalSlider')}>
             {
                 services.map( (service, index) => {
-                  const { title, featuredImage, featuredSectionBackgroundColour } = service
+                  
+                  const { title, featuredImage, s } = service;
 
-                  return <div className={cx('serviceModal')} style={{backgroundColor: featuredSectionBackgroundColour}} key={`modal_${index}`}>
+
+                  return <div className={cx('serviceModal')} key={`modal_${index}`}>
                       {
                         featuredImage.node.sourceUrl ? (
                           <Image 
                             src={featuredImage.node.sourceUrl}
                             width={300}
-                            height={0}
+                            height={300}
                             alt={title}
                             />
                         ) : null

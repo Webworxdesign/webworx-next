@@ -1,6 +1,6 @@
 'use client';
 import { gql, useQuery } from '@apollo/client';
-import React, { useState, useLayoutEffect, useRef } from 'react'
+import React, { useLayoutEffect, useRef } from 'react'
 import Image from 'next/image';
 import gsap from 'gsap';
 import { ScrollTrigger } from 'gsap/dist/ScrollTrigger';
@@ -90,7 +90,7 @@ export default function ProjectScroller({ }) {
                                         height={500}
                                     />
                                 ) : (
-                                    <div className={cx('no-image')}></div>
+                                    ''
                                 )}
                             </div>
                             <h3 className={cx('project-title')}>{project.title}</h3>

@@ -42,7 +42,7 @@ export default function HomeHeroBanner() {
         timeline
             .fromTo( 
                 bannerImgRef.current, 
-                { height: 140, width: 230, borderRadius: "40px", x: 650, marginTop: -150, duration: 50 },
+                { height: 140, width: 250, borderRadius: "40px", x: 650, marginTop: -150, duration: 50 },
                 { height: "75vh", width: bannerMaxWidth, borderTopRightRadius: 0, borderBottomRightRadius: 0, x: 10, marginTop: 0, duration: 5  }
             )
             .fromTo(
@@ -71,7 +71,17 @@ export default function HomeHeroBanner() {
                 </div>
                 
                 <h1><AnimatedText text="Experiences" delay={2} /></h1>
-                <h3 className={cx('banner-description')} ref={bannerDescRef}>that help businesses to connect with customers in a meaningful way</h3>
+                <div  className={cx('banner-description')} ref={bannerDescRef}>
+                    <h3>that help businesses to connect with customers in a meaningful way</h3>
+                    <button className="btn btn-primary" style={{width: '200px'}}>
+                        <div class="marquee">
+                            <div class="marquee__inner">
+                                <span class="marquee__line">Start a project +</span>
+                                <span class="marquee__line">Start a project +</span>
+                            </div>
+                        </div>
+                    </button>
+                </div>
             </div>
                             
         </div>

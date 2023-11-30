@@ -27,22 +27,9 @@
         line-height: 100%;
         color: var(--wwx--color--black);
     }
-    h3 {
-        font-family: 'Open Sans';
-        font-size: 40px;
-        font-style: normal;
-        font-weight: 300;
-        line-height: 120%;
-        color: var(--wwx--color--black);
-        margin-left: 32%;
-        &.banner-description {
-            opacity: 0;
-        }
-    }
     .banner-img {
         display: block;
         position: relative;
-        // width: calc( (100vw - var(--wwx--content--max-width)) / 2 + var(--wwx--content--max-width) - var(--wwx--content--padding--right) );
         width: calc( ( 100vw - var(--wwx--content--max-width) ) / 2 + var(--wwx--content--max-width) - var(--wwx--content--padding--right) );
         max-width: unset;
         background-color: #eeeeee;
@@ -56,25 +43,41 @@
             width: 100%;
             height: 100%;
         }
+        video {
+            width: 100%; 
+            height: auto;
+        }
     }
-
-    // .stickyMask{
-    //     display: flex;
-    //     overflow: hidden;
-    //     position: sticky;
-    //     top: 0;
-    //     height: 100vh;
-    //     align-items: center;
-    //     justify-content: center;
-    //     mask-image: url('./../../assets/svg/mask.svg');
-    //     mask-position: 60% 230px;
-    //     mask-repeat: no-repeat;
-    //     mask-size: 140px;
-    // }
-
-    // .stickyMask video{
-    //     height: 100%;
-    //     width: 100%;
-    //     object-fit: cover;
-    // }
+    .banner-description {
+        display: block;
+        opacity: 0;
+        margin-left: 32%;
+    }
+    h3 {
+        font-family: 'Open Sans';
+        font-size: 40px;
+        font-style: normal;
+        font-weight: 400;
+        line-height: 120%;
+        color: var(--wwx--color--black);
+        margin-bottom: 50px;
+    }
+    button {
+        display: block;
+        background-color: var(--wwx--color--white);
+        border: 1px solid var(--wwx--color--black); 
+        border-radius: 50px;
+        font-family: 'Poly Sans';
+        font-size: 22px;
+        font-weight: 300;
+        line-height: 100%;
+        color: var(--wwx--color--black);
+        padding: 13px 17px 15px;
+        transition: all 0.3s ease-in-out;
+        cursor: pointer;
+        &:hover {
+            background-color: var(--wwx--color--black);
+            color: var(--wwx--color--white);
+        }
+    }
 }

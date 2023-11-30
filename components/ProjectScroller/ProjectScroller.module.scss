@@ -26,11 +26,19 @@
             border-radius: 30px; 
             overflow: hidden;
             margin-bottom: 20px;
+            transition: 0.5s all ease-in-out;
             img {
                 width: 100%;
                 height: 100%;
                 object-fit: cover;
                 object-position: center;
+                transition: 0.5s all ease-in-out;
+            }
+            &:hover {
+                border-radius: 55px;
+                img {
+                    transform: scale(1.1);
+                }
             }
         }
         .project-title {

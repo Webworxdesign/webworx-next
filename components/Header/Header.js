@@ -24,8 +24,16 @@ export default function Header({
   
   const hasInlineToggle = headerPresets === 'nav-float-right' || 'nav-float-left' ? 'has-inline-mobile-toggle' : '';
 
+  useEffect(() => {
+    if (isNavShown) {
+      document.body.classList.add("menu-open");
+    } else {
+      document.body.classList.remove("menu-open");
+    }
+  }, [isNavShown]);
+
   return (
-    <header id="masthead" className={cx(headerPresets, 'component', gridContainer, hasInlineToggle)}>
+    <header id="masthead" className={cx('site-header', headerPresets, 'component', gridContainer, hasInlineToggle)}>
       <SkipNavigationLink />
       <div className={cx('inside-header', innerGridContainer)}>
         <div className={cx('site-logo')}>
