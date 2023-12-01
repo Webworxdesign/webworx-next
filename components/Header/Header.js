@@ -7,6 +7,7 @@ import ThemeSettings from '../../constants/themeSettings';
 import HeaderSettings from '../../constants/HeaderSettings';
 import styles from './Header.module.scss';
 import ThemeToggleBtn from './../ThemeToggleBtn/ThemeToggleBtn';
+import { AnimatePresence } from 'framer-motion';
 
 let cx = classNames.bind(styles);
 
@@ -70,17 +71,10 @@ export default function Header({
             <span className="screen-reader-text">Menu</span>		
           </button>
         </nav>
-
-        <nav 
-          className={cx( ['site-navigation', 'main-navigation', 'has-menu-bar-items', 'sub-menu-right', isNavShown ? 'toggled' : undefined] )} 
-          aria-label={`${menuItems[0]?.menu?.node?.name} menu`} 
-          role="navigation" >
-          <div className={cx('inside-navigation', 'grid-container')}>
-            <div id="primary-menu" className={cx('main-nav')}>
-              <NavigationMenu menuItems={menuItems} />
-            </div>
-          </div>
-        </nav>       
+        
+        <AnimatePresence mode='wait'>
+          { isNavShown && <NavigationMenu menuItems={menuItems} /> }
+        </AnimatePresence>    
       </div>
     </header>
   );

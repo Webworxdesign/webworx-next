@@ -53,7 +53,6 @@ export default function ProjectScroller({ }) {
                     end: "bottom top",
                     scrub: 0.6,
                     pin: true,
-                    markers: true,
                 },
                 }
             );
