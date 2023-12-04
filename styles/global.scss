@@ -12,4 +12,7 @@
 
 body {
     background-color: var(--wwx--color--white);
+    &.menu-open {
+        overflow: hidden;
+    }
 }

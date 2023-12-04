@@ -1,48 +1,46 @@
-.site-header {
-    .nav-float-right {
-        .site-navigation {
-            margin-left:auto
-        }
+.nav-float-right {
+    .site-navigation {
+        margin-left:auto
     }
-    .nav-float-left {
-        .site-navigation {
-            margin-right:auto;
-            order:-10
-        }
-        .mobile-menu-control-wrapper {
-            order:-10;
-            margin-left:0;
-            margin-right:auto;
-            flex-direction:row-reverse
-        }
+}
+.nav-float-left {
+    .site-navigation {
+        margin-right:auto;
+        order:-10
     }
-    .nav-below-header .main-navigation .inside-navigation.grid-container, 
-    .nav-above-header .main-navigation .inside-navigation.grid-container {
-        padding:0px 20px 0px 20px;
+    .mobile-menu-control-wrapper {
+        order:-10;
+        margin-left:0;
+        margin-right:auto;
+        flex-direction:row-reverse
     }
-    .rtl .menu-item-has-children .dropdown-menu-toggle {
-        padding-left: 20px;
-    }
-    .rtl .main-navigation .main-nav ul li.menu-item-has-children > a {
-        padding-right: 20px;
-    }
+}
+.nav-below-header .main-navigation .inside-navigation.grid-container, 
+.nav-above-header .main-navigation .inside-navigation.grid-container {
+    padding:0px 20px 0px 20px;
+}
+.rtl .menu-item-has-children .dropdown-menu-toggle {
+    padding-left: 20px;
+}
+.rtl .main-navigation .main-nav ul li.menu-item-has-children > a {
+    padding-right: 20px;
+}
 
-    @media ( max-width: 2080px ) {
-        .nav-align-right .inside-navigation, 
-        .nav-align-center .inside-navigation {
-            justify-content: space-between;
+@media ( max-width: 2080px ) {
+    .nav-align-right .inside-navigation, 
+    .nav-align-center .inside-navigation {
+        justify-content: space-between;
+    }
+    .has-inline-mobile-toggle {
+        .mobile-menu-control-wrapper {
+            display: flex;
+            flex-wrap: wrap;
         }
-        &.has-inline-mobile-toggle {
-            .mobile-menu-control-wrapper {
-                display: flex;
-                flex-wrap: wrap;
-            }
-            .site-navigation {
-                flex-basis: 100%;
-            }
+        .site-navigation {
+            flex-basis: 100%;
         }
-        .nav-float-left .has-inline-mobile-toggle .site-navigation {
-            order: 10;
-        }
+    }
+    .nav-float-left .has-inline-mobile-toggle .site-navigation {
+        order: 10;
     }
 }

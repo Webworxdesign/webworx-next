@@ -62,22 +62,4 @@
         color: var(--wwx--color--black);
         margin-bottom: 50px;
     }
-    button {
-        display: block;
-        background-color: var(--wwx--color--white);
-        border: 1px solid var(--wwx--color--black); 
-        border-radius: 50px;
-        font-family: 'Poly Sans';
-        font-size: 22px;
-        font-weight: 300;
-        line-height: 100%;
-        color: var(--wwx--color--black);
-        padding: 13px 17px 15px;
-        transition: all 0.3s ease-in-out;
-        cursor: pointer;
-        &:hover {
-            background-color: var(--wwx--color--black);
-            color: var(--wwx--color--white);
-        }
-    }
 }

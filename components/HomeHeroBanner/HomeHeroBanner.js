@@ -73,12 +73,10 @@ export default function HomeHeroBanner() {
                 <h1><AnimatedText text="Experiences" delay={2} /></h1>
                 <div  className={cx('banner-description')} ref={bannerDescRef}>
                     <h3>that help businesses to connect with customers in a meaningful way</h3>
-                    <button className="btn btn-primary" style={{width: '200px'}}>
-                        <div class="marquee">
-                            <div class="marquee__inner">
-                                <span class="marquee__line">Start a project +</span>
-                                <span class="marquee__line">Start a project +</span>
-                            </div>
+                    <button className="btn btn-primary marquee" style={{width: '200px'}}>
+                        <div className="marquee__inner">
+                            <span className="marquee__line">Start a project +</span>
+                            <span className="marquee__line">Start a project +</span>
                         </div>
                     </button>
                 </div>

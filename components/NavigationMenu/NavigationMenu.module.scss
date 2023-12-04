@@ -1,195 +1,136 @@
 @import 'styles/breakpoints';
 
-%visible {
-	visibility: visible;
-	opacity: 1;
-}
-
-%hidden {
-	// Always visible for smaller viewports.
-	@media (min-width: $breakpoint-small) {
-		visibility: hidden;
-		opacity: 0;
-	}
-}
-
 .component {
 	background-color: var(--wwx--navigation-menu--background-color);
 }
 
-.menu {
-	list-style-type: none;
-	display: flex;
-	flex-wrap: wrap;
-	justify-content: center;
-	padding: 0;
-	margin: 0;
-	position: relative;
-	gap: 0.5rem;
-
-	li {
-		display: flex;
-		align-items: center;
-		position: relative;
-		width: 100%;
-		flex-direction: column;
-
-		@media (min-width: $breakpoint-small) {
-			width: auto;
-			flex-direction: row;
-		}
-
-		&:focus-within ul,
-		a:hover + ul,
-		a:focus + ul {
-			@extend %visible;
-		}
-	}
-
-	a {
-		display: flex;
-		align-items: center;
-		color: var(--wwx--navigation-menu--color);
-		padding: 0.5rem;
-		transition: all 0.2s ease-out;
-		width: 100%;
-		white-space: nowrap;
-		text-align: center;
-
-		svg {
-			margin-left:5px
-		}
-
-		&:hover,
-		&:focus {
-			color: var(--wwx--navigation-menu--color--hover);
-		}
-
-		// Remove link underline when component is inside header.
-		header & {
-			text-decoration: none;
-		}
-	}
-
-	li ul {
-		@extend %hidden;
-		background-color: var(--wwx--dropdown--background-color);
-		display: flex;
-		flex-direction: column;
-		gap: 0;
-		width: 100%;
-
-		@media (min-width: $breakpoint-small) {
-			position: absolute;
-			left: -10px;
-			top: 100%;
-			text-align: left;
-			box-shadow: var(--wwx--shadow--large);
-			padding: 1rem;
-			border-radius: 8px;
-			transition: all 0.2s ease-out;
-			width: inherit;
-			border: var(--wwx--border--extra-light);
-		}
-
-		&:hover {
-			@extend %visible;
-		}
-
-		li + li {
-			@media (min-width: $breakpoint-small) {
-				border-top: var(--wwx--border--light);
-				margin-top: 3px; // Make room for default browser focus styles.
-			}
-		}
-	}
-}
-
 .main-navigation {
-	&.toggled {
-		.main-nav {
-			flex-basis: 100%;
-			order: 3;
-			> ul {
-				display: block ;
-			}
-			li {
-				width: 100%;
-				text-align: left;
-			}
-			ul {
-				ul { 
-					transition: 0s;
-					visibility: hidden;
-					box-shadow: none; 
-					border-bottom: 1px solid rgba(0,0,0,.05);
-				}
-				ul li:last-child>ul {
-					border-bottom: 0;
-				}
-				ul.toggled-on {
-					position: relative;
-					top: 0;
-					left: auto!important;
-					right: auto!important;
-					width: 100%;
-					pointer-events: auto;
-					height: auto;
-					opacity: 1;
-					display: block;
-					visibility: visible;
-					float: none
-				}
-			}
-		}
-		.menu-item-has-children .dropdown-menu-toggle {
-			float: right
-		}
+    height: 100vh;
+	width: 100%;
+    position: fixed;
+	background-color: #F4F3E1;
+    right: 0;
+    top: 0;
+	.inside-navigation {
+		box-sizing: border-box;
+		height: 100%;
+		padding: 140px 40px 0;
+		display: flex;
+		flex-direction: column;
 	}
-
-	// Custom Menu Styling 
-	.main-nav {
-		ul {
-			li {
-				a {
-					font-size: 80px;
-					font-weight: 300;
-					line-height: 100%;
-				}
-			}
-		}
-	}
-}
-@media ( max-width: 2080px ) {
-	.main-navigation ul, 
-	.main-navigation:not(.slideout-navigation):not(.toggled) .main-nav > ul {
-		display: block; 
-		position: absolute;
-		z-index: 999;
-		background-color: var(--wwx--color--white);
-		height: 0vh;
-		width: 100%;
-		top: 100%;
-		left: 0;
-		padding: var(--inside--header--padding); 
-		padding-top: 0;
-		padding-bottom: 0;
-		overflow: hidden; 
-		pointer-events: none;
-		transition: 0.95s all ease-in-out;
-		
-		@media (max-width: $breakpoint-small){
-			padding: var(--inside--header--padding--mobile);
-			padding-top: 0;
-			padding-bottom: 0;
-		}
-	}
+	.menu {
+		list-style-type: none;
+		display: flex;
+		flex-wrap: wrap;
+		flex-direction: column;
+		justify-content: center;
+		padding: 0;
+		position: relative;
+		margin-bottom: 60px;
 	
-	.main-navigation.toggled .inside-navigation > .main-nav > ul{
-		height: 100vh;
-		pointer-events: all;
+		li {
+			display: flex;
+			align-items: center;
+			flex-direction: column;
+			position: relative;
+			width: 100%;
+			.menu-item-wrapper {
+				position: absolute;
+				left: -30px;
+			}
+		}
+	
+		a {
+			display: flex;
+			align-items: center;
+			font-family: 'Poly Sans';
+			color: var(--wwx--navigation-menu--color);
+			transition: all 0.2s ease-out;
+			width: 100%;
+			white-space: nowrap;
+			text-align: center;
+	
+			svg {
+				margin-left:5px
+			}
+	
+			&:hover,
+			&:focus {
+				color: var(--wwx--navigation-menu--color--hover);
+			}
+	
+			// Remove link underline when component is inside header.
+			header & {
+				text-decoration: none;
+			}
+		}
+	
+		.sub-menu {
+			// @extend %hidden;
+			display: flex;
+			flex-direction: column;
+			gap: 0;
+			width: 100%;
+			height: 0px;
+			padding: 0;
+			overflow: hidden;
+			transition: all 0.5s ease-in-out;
+		}
+		.dropdown-menu-toggle {
+			display: block;
+			margin-left: 5px;
+			padding: 0 5px;
+			transition: all 0.5s ease-in-out;
+		}
 	}
-	.main-navigation .menu-toggle {
-		display: block;
+	.main-nav {
+		> ul {
+			display: block ;
+		}
+		li {
+			width: 100%;
+			text-align: left;
+		}
+		ul {
+			ul { 
+				transition: 0s;
+				visibility: hidden;
+				box-shadow: none; 
+				border-bottom: 1px solid rgba(0,0,0,.05);
+			}
+			ul li:last-child>ul {
+				border-bottom: 0;
+			}
+			ul.toggled-on {
+				position: relative;
+				top: 0;
+				left: auto!important;
+				right: auto!important;
+				width: 100%;
+				pointer-events: auto;
+				height: auto;
+				opacity: 1;
+				display: block;
+				visibility: visible;
+				float: none
+			}
+		}
+	}
+	.menu-item-has-children .dropdown-menu-toggle {
+		float: right
 	}
 }
+
+// Custom Menu Styling 
+.main-nav {
+	ul {
+		li {
+			a {
+				font-size: 80px;
+				font-weight: 300;
+				line-height: 100%;
+			}
+		}
+	}
+}
+
