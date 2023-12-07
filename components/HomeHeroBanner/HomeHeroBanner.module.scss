@@ -16,7 +16,6 @@
         font-style: normal;
         font-size: 180px;
         line-height: 100%;
-        color: var(--wwx--color--black);
         margin-left: 8%;
     }
     h2 {
@@ -59,7 +58,8 @@
         font-style: normal;
         font-weight: 400;
         line-height: 120%;
-        color: var(--wwx--color--black);
         margin-bottom: 50px;
+        color: #fff;
+        mix-blend-mode: difference;
     }
 }

@@ -15,9 +15,9 @@ import { GlobalFields } from '../components/GlobalFields';
 import { HomeHeroBanner } from '../components/HomeHeroBanner';
 import { ProjectScroller } from '../components/ProjectScroller';
 import HomeServiceSection from '../components/HomeServicesSection/HomeSevicesSection';
+import Noise from '../assets/gifs/animated-grain.gif'
 
 export default function Component() {
-
   const { data } = useQuery(Component.query, {
     variables: Component.variables(),
   });
@@ -47,7 +47,8 @@ export default function Component() {
       />
 
       <Main>
-
+        <div class="animation-background" ></div>
+        <div class="grain-foreground" style={{"background-image":`url('${Noise.src}')`}} ></div>
         <HomeHeroBanner />
 
         <ProjectScroller />

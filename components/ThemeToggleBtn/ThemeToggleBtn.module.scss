@@ -34,15 +34,18 @@
         height: 22px;
         transition: 0.3s ease all;
         z-index: 1;
-        background-color: #000000; 
+        background-color: #fff; 
         margin-top: 2px;
     }
     &.toggled {
         .knobs {
             left: 28px;
         }
-        .layer {
-            background-color: #ffffff;
+        svg path {
+            fill: #000;
         }
+        // .layer {
+        //     background-color: #ffffff;
+        // }
     }
 }

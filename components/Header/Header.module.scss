@@ -3,6 +3,7 @@
 .site-header {
 	position: relative;
 	z-index: 999;
+	mix-blend-mode: difference;
 	.component {
 		color: var(--wwx--header--color);
 		background-color: var(--wwx--header--background-color);
@@ -37,6 +38,11 @@
    		z-index: 9;
 		a {
 			text-decoration: none;
+			svg {
+				path {
+					fill: #fff;
+				}
+			}
 		}
 	}
 	.inside-header {
@@ -68,7 +74,7 @@
 				position: absolute;
 				height: 2px;
 				width: 100%;
-				background: var(--wwx--color--black);
+				background: #fff;
 				border-radius: 9px;
 				opacity: 1;
 				left: 0;

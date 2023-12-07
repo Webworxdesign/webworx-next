@@ -52,6 +52,7 @@ export default function Component(props) {
       <Main>
         <>
           <Container>
+          <div class="animation-background" ></div>
             <ContentWrapper content={content} />
           </Container>
         </>
