@@ -2,6 +2,7 @@ import { useQuery, gql } from '@apollo/client';
 import {  useEffect } from 'react';
 import * as MENUS from '../constants/menus';
 import { BlogInfoFragment } from '../fragments/GeneralSettings';
+import Image from 'next/image';
 import {
   Header,
   Footer,
@@ -16,6 +17,8 @@ import { HomeHeroBanner } from '../components/HomeHeroBanner';
 import { ProjectScroller } from '../components/ProjectScroller';
 import HomeServiceSection from '../components/HomeServicesSection/HomeSevicesSection';
 import Noise from '../assets/gifs/animated-grain.gif'
+import { TestimonialCards } from '../components/TestimonialCards';
+import { ReviewCarouselHome } from '../components/ReviewCarousel';
 
 export default function Component() {
   const { data } = useQuery(Component.query, {
@@ -54,6 +57,8 @@ export default function Component() {
         <ProjectScroller />
 
         <HomeServiceSection />
+        
+        <ReviewCarouselHome />
 
       </Main>
 

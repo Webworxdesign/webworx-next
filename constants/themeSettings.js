@@ -39,6 +39,10 @@ query theme_settings {
       featuredHeroVideo {
         mediaItemUrl
       }
+      socialMedia {
+        socialMediaType
+        socialMediaUrl
+      }
     }
   }
 }

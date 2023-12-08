@@ -33,4 +33,11 @@
             margin-bottom: 15px;
         }
     }
+    &:first-of-type {
+        padding-top: 0px;
+    }
+    &:last-of-type {
+        padding-bottom: 0px;
+        border-bottom: none;
+    }
 }

@@ -430,7 +430,23 @@ button {
     }
 }
   
-  
+.social-media {
+    display: flex;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 10px;
+    a {
+        display: block;
+        font-family: 'Open Sans';
+        font-size: 30px;
+        font-weight: 300;
+        line-height: 100%;
+        text-decoration: none;
+        text-transform: capitalize;
+        margin-right: 30px;
+        transition: all 0.3s ease-in-out;
+    }
+} 
   
 @keyframes marqueeLine {
     from {
@@ -439,6 +455,21 @@ button {
 
     to {
         transform: translateX(-100%);
+    }
+}
+
+.slick-slider {
+    .slick-list {
+        margin: 0 -27px;
+    }
+    .slick-slide {
+        padding: 0 27px;
+    }
+}
+
+#testimonial-section {
+    .slick-list {
+        overflow: visible;
     }
 }
   

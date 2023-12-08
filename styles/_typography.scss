@@ -48,7 +48,7 @@ body {
     margin-right: 0;
     margin-bottom: 0;
 
-    @media (max-width: $breakpoint-medium) and (min-width: $breakpoint-small) {
+    @media (max-width: $breakpoint-medium) {
         font-size: var(--body--font--size--tablet);
         line-height: var(--body--line--height--tablet);
         margin-left: 0;
@@ -70,7 +70,7 @@ body {
     margin-top: 0;
     margin-bottom: var(--main-title--margin--bottom--desktop);
 
-    @media (max-width: $breakpoint-medium) and (min-width: $breakpoint-small) {
+    @media (max-width: $breakpoint-medium) {
         font-size: var(--main-title--font--size--tablet);
         line-height: var(--main-title--line--height--tablet);
         margin-bottom: var(--main-title--margin--bottom--tablet);
@@ -88,7 +88,7 @@ body {
     margin-top: 0;
     margin-bottom: var(--site-description--margin--bottom--desktop);
 
-    @media (max-width: $breakpoint-medium) and (min-width: $breakpoint-small) {
+    @media (max-width: $breakpoint-medium) {
         font-size: var(--site-description--font--size--tablet);
         line-height: var(--site-description--line--height--tablet);
         margin-bottom: var(--site-description--margin--bottom--tablet);
@@ -101,9 +101,17 @@ body {
 }
 
 .section-title {
-    font-size: 100px;
+    font-size: 6.25rem;
     font-weight: 300;
     line-height: 100%;
+    margin-bottom: 60px;
+    @media (max-width: $breakpoint-medium) {
+        font-size: 4.6875rem;
+        margin-bottom: 30px;
+    }
+    @media (max-width: 767px) {
+        font-size: 3.125rem;
+    }
 }
 
 header {
@@ -114,7 +122,7 @@ header {
                 line-height: var(--primary-menu-items--line--height--desktop);
                 margin-bottom: var(--primary-menu-items--margin--bottom--desktop);
 
-                @media (max-width: $breakpoint-medium) and (min-width: $breakpoint-small) {
+                @media (max-width: $breakpoint-medium) {
                     font-size: var(--primary-menu-items--font--size--tablet);
                     line-height: var(--primary-menu-items--line--height--tablet);
                     margin-bottom: var(--primary-menu-items--margin--bottom--tablet);
@@ -131,7 +139,7 @@ header {
                     line-height: var(--primary-sub-menu-items--line--height--desktop);
                     margin-bottom: var(--primary-sub-menu-items--margin--bottom--desktop);
 
-                    @media (max-width: $breakpoint-medium) and (min-width: $breakpoint-small) {
+                    @media (max-width: $breakpoint-medium) {
                         font-size: var(--primary-sub-menu-items--font--size--tablet);
                         line-height: var(--primary-sub-menu-items--line--height--tablet);
                         margin-bottom: var(--primary-sub-menu-items--margin--bottom--tablet);
@@ -152,7 +160,7 @@ button, .wp-block-button__link {
     line-height: var(--button--line--height--desktop);
     margin-bottom: var(--button--margin--bottom--desktop);
 
-    @media (max-width: $breakpoint-medium) and (min-width: $breakpoint-small) {
+    @media (max-width: $breakpoint-medium) {
         font-size: var(--button--font--size--tablet);
         line-height: var(--button--line--height--tablet);
         margin-bottom: var(--button--margin--bottom--tablet);
@@ -169,7 +177,7 @@ h1 {
     line-height: var(--h1--line--height--desktop);
     margin-bottom: var(--h1--margin--bottom--desktop);
 
-    @media (max-width: $breakpoint-medium) and (min-width: $breakpoint-small) {
+    @media (max-width: $breakpoint-medium) {
         font-size: var(--h1--font--size--tablet);
         line-height: var(--h1--line--height--tablet);
         margin-bottom: var(--h1--margin--bottom--tablet);
@@ -186,7 +194,7 @@ h2 {
     line-height: var(--h2--line--height--desktop);
     margin-bottom: var(--h2--margin--bottom--desktop);
 
-    @media (max-width: $breakpoint-medium) and (min-width: $breakpoint-small) {
+    @media (max-width: $breakpoint-medium) {
         font-size: var(--h2--font--size--tablet);
         line-height: var(--h2--line--height--tablet);
         margin-bottom: var(--h2--margin--bottom--tablet);
@@ -203,7 +211,7 @@ h3 {
     line-height: var(--h3--line--height--desktop);
     margin-bottom: var(--h3--margin--bottom--desktop);
 
-    @media (max-width: $breakpoint-medium) and (min-width: $breakpoint-small) {
+    @media (max-width: $breakpoint-medium) {
         font-size: var(--h3--font--size--tablet);
         line-height: var(--h3--line--height--tablet);
         margin-bottom: var(--h3--margin--bottom--tablet);
@@ -220,7 +228,7 @@ h4 {
     line-height: var(--h4--line--height--desktop);
     margin-bottom: var(--h4--margin--bottom--desktop);
 
-    @media (max-width: $breakpoint-medium) and (min-width: $breakpoint-small) {
+    @media (max-width: $breakpoint-medium) {
         font-size: var(--h4--font--size--tablet);
         line-height: var(--h4--line--height--tablet);
         margin-bottom: var(--h4--margin--bottom--tablet);
@@ -237,7 +245,7 @@ h5 {
     line-height: var(--h5--line--height--desktop);
     margin-bottom: var(--h5--margin--bottom--desktop);
 
-    @media (max-width: $breakpoint-medium) and (min-width: $breakpoint-small) {
+    @media (max-width: $breakpoint-medium) {
         font-size: var(--h5--font--size--tablet);
         line-height: var(--h5--line--height--tablet);
         margin-bottom: var(--h5--margin--bottom--tablet);
@@ -254,7 +262,7 @@ h6 {
     line-height: var(--h6--line--height--desktop);
     margin-bottom: var(--h6--margin--bottom--desktop);
 
-    @media (max-width: $breakpoint-medium) and (min-width: $breakpoint-small) {
+    @media (max-width: $breakpoint-medium) {
         font-size: var(--h6--font--size--tablet);
         line-height: var(--h6--line--height--tablet);
         margin-bottom: var(--h6--margin--bottom--tablet);

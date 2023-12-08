@@ -1,0 +1,163 @@
+@import "styles/breakpoints";
+
+.testimonial-cards {
+    display: block;
+    padding: 60px 0;
+    overflow: hidden;
+    position: relative;
+    > div {
+       position: relative; 
+    }
+
+    .testimonial-card-image {
+        display: block;
+        width: 100%;
+        height: 350px;
+        overflow: hidden;
+        background-color: #e2e2e2;
+        margin-bottom: 20px;
+        img {
+            display: block;
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            object-position: center;
+        }
+    }
+    .testimonial-card-content {
+        .content {
+            display: block;
+            font-size: 20px;
+            font-weight: 300;
+            line-height: 140%;
+            margin-bottom: 20px;
+        }
+        .company-author {
+            font-family: 'Poly Sans';
+            font-size: 20px;
+            font-weight: 300;
+            line-height: 140%;
+            letter-spacing: -0.25px; 
+        }
+        .company-name {
+            font-family: 'Open Sans';
+            font-size: 16px;
+            font-weight: 300;
+            line-height: 120%;
+        }
+    }
+    .testimonial-card {
+        &.testimonial-card-0, &.testimonial-card-2, &.testimonial-card-4 {
+            .testimonial-card-image {
+                border-radius: 76px 0px 0px 0px; 
+            }
+        }
+        &.testimonial-card-1, &.testimonial-card-3, &.testimonial-card-5 {
+            .testimonial-card-image {
+                border-radius: 0px 0px 76px 0px; 
+            }
+        }
+    }
+    .testimonial-blurb {
+        display: block;
+        width: 100%;
+        max-width: 400px;
+        position: absolute;
+        top: 0;
+        left: calc(50% + 15px);
+        padding-top: 80px;
+        padding-bottom: 80px;
+        opacity: 1;
+        visibility: visible;
+        pointer-events: auto;
+        transition: all 0.3s ease-in-out;
+        p {
+            font-family: 'Open Sans';
+            font-size: 25px;
+            font-weight: 400;
+            line-height: 150%;
+            display: block;
+            max-width: 400px;
+            &:last-child {
+                font-weight: 300;
+            }
+        }
+        h2 {
+            display: block;
+            max-width: 400px;
+            margin-bottom: 35px;
+            font-family: 'Poly Sans';
+            font-size: 80px;
+            font-style: normal;
+            font-weight: 300;
+            line-height: 100%;
+        }
+    }
+    .testimonial-button {
+        display: block;
+        position: absolute;
+        top: 0;
+        left: 0;
+        appearance: none;
+        background: var(--wwx--color--accent);
+        border-color: var(--wwx--color--accent);
+        border-radius: 50px;
+        color: var(--wwx--color--black);
+        padding: 17px 58px;
+        font-size: 26px;
+        font-weight: 300;
+        line-height: 100%;
+        box-shadow: none;
+        transition: all 0.3s ease-in-out;
+        cursor: pointer;
+    }
+    .keenslider-wrapper {
+        overflow: visible;
+        .keen-slide {
+            border-radius: 20px;
+        }
+    }
+    &.slider-on {
+        .testimonial-blurb {
+            opacity: 0;
+            visibility: hidden;
+            pointer-events: none;
+        }
+    }
+    &
+    &.slider-off {
+        position: relative;
+        .slider-item {
+            &:nth-child(1), &:nth-child(6) {
+                img {
+                    transform: rotate(-0.6deg);
+                }
+            }
+            &:nth-child(2), &:nth-child(7) {
+                img {
+                    transform: rotate(4.2deg);
+                }
+            }
+            &:nth-child(3), &:nth-child(8) {
+                img {
+                    transform: rotate(-8.19deg);
+                }
+            }
+            &:nth-child(4), &:nth-child(9) {
+                img {
+                    transform: rotate(5.9deg);
+                }
+            }
+            &:nth-child(5), &:nth-child(10) {
+                img {
+                    transform: rotate(-3.25deg);
+                }
+            }
+            section  { 
+                opacity: 0;
+                pointer-events: none;
+                transition: none;
+            }
+        }
+    }
+}

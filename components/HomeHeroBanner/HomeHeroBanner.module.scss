@@ -14,7 +14,7 @@
         font-family: 'Poly Sans';
         font-weight: 300;
         font-style: normal;
-        font-size: 180px;
+        font-size: 11.25rem;
         line-height: 100%;
         margin-left: 8%;
     }
@@ -22,19 +22,22 @@
         font-family: 'Open Sans';
         font-weight: 300;
         font-style: normal;
-        font-size: 55px;
+        font-size: 3.5rem;
         line-height: 100%;
         color: var(--wwx--color--black);
     }
     .banner-img {
         display: block;
         position: relative;
-        width: calc( ( 100vw - var(--wwx--content--max-width) ) / 2 + var(--wwx--content--max-width) - var(--wwx--content--padding--right) );
+        height: 140px; 
+        width: 250px;
+        margin-top: -160px;
         max-width: unset;
         background-color: #eeeeee;
         background-size: cover;
         background-position: center;
-        border-radius: 30px 0px 0px 30px;
+        border-radius: 40px;
+        transform: translate(850px);
         overflow: hidden;
         img {
             object-fit: cover;
@@ -46,6 +49,21 @@
             width: 100%; 
             height: auto;
         }
+        @media (max-width: $breakpoint-medium) {
+            height: 110px;
+            width: 200px;
+            margin-top: -120px;
+            border-radius: 30px;
+            transform: translate(450px);
+        }
+        @media (max-width: $breakpoint-small) {
+            height: 80px;
+            width: 140px;
+            margin-top: -80px;
+            border-radius: 20px;
+            transform: translate(280px);
+            
+        }
     }
     .banner-description {
         display: block;
@@ -54,12 +72,36 @@
     }
     h3 {
         font-family: 'Open Sans';
-        font-size: 40px;
+        font-size: 2.5rem;
         font-style: normal;
         font-weight: 400;
         line-height: 120%;
         margin-bottom: 50px;
         color: #fff;
         mix-blend-mode: difference;
+    }
+    @media (max-width: $breakpoint-medium) {
+        h1 {
+            font-size: 8rem;
+        }
+        h2 {
+            font-size: 2.5rem;
+        }
+        h3 {
+            font-size: 2rem;
+        }
+    }
+    @media (max-width: $breakpoint-small) {
+        padding: 120px 0 30px;
+        min-height: 800px;
+        h1 {
+            font-size: 4.3rem;
+        }
+        h2 {
+            font-size: 2rem;
+        }
+        h3 {
+            font-size: 1.125rem;
+        }
     }
 }

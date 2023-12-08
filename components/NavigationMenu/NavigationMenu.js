@@ -10,6 +10,7 @@ import { menuSlide, slide } from './anime.js';
 import Curve from './Curve/Curve.js';
 import Image from 'next/image';
 import menuImage from './../../assets/images/menu-image.jpg';
+import ThemeSettings from '../../constants/themeSettings';
 
 let cx = classNames.bind(styles);
 let cxFromWp = classNames.bind(stylesFromWP);
@@ -22,6 +23,8 @@ export default function NavigationMenu({ menuItems, className }) {
   if (!menuItems) {
     return null;
   }
+
+  const { socialMedia } = ThemeSettings();
 
   // Based on https://www.wpgraphql.com/docs/menus/#hierarchical-data
   const hierarchicalMenuItems = flatListToHierarchical(menuItems);
@@ -44,9 +47,11 @@ export default function NavigationMenu({ menuItems, className }) {
         <div className={cx('inside-navigation', 'container')}>
 
           <div className="row">
+
             <div className="col-md-6">
               <Image src={menuImage} alt="Menu Image" />
             </div>
+
             <div className="col-md-6">
               <ul id="primary-menu" className={cx('menu')}>
                 {items.map((item) => {
@@ -104,12 +109,23 @@ export default function NavigationMenu({ menuItems, className }) {
               </ul>
 
               
-              <button className="btn btn-primary marquee" style={{width: '200px'}}>
-                  <div className="marquee__inner">
-                      <span className="marquee__line">Start a project +</span>
-                      <span className="marquee__line">Start a project +</span>
-                  </div>
+              <button className="btn btn-primary marquee" style={{width: '200px'}}> 
+                <div className="marquee__inner">
+                  <span className="marquee__line">Start a project +</span>
+                  <span className="marquee__line">Start a project +</span>
+                </div>
               </button>
+
+              <div className={cx('social-media')}>
+                {socialMedia.map((item, index) => {
+                  const { socialMediaType, socialMediaUrl } = item;
+                    return (
+                      <Link key={'social-'+index} href={socialMediaUrl ?? ''}>
+                        {socialMediaType ?? ''}
+                      </Link>
+                    );
+                  })}
+                </div>
             </div>
           </div>
 
