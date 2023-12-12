@@ -24,7 +24,7 @@ export default function Component() {
   const { data } = useQuery(Component.query, {
     variables: Component.variables(),
   });
-  
+
   const { title: siteTitle, description: siteDescription } =
     data?.generalSettings;
   const primaryMenu = data?.headerMenuItems?.nodes ?? [];
@@ -50,8 +50,8 @@ export default function Component() {
       />
 
       <Main>
-        <div class="animation-background" ></div>
-        <div class="grain-foreground" style={{"background-image":`url('${Noise.src}')`}} ></div>
+        <div className="animation-background" ></div>
+        <div className="grain-foreground" style={{"background-image":`url('${Noise.src}')`}} ></div>
         <HomeHeroBanner />
 
         <ProjectScroller />

@@ -1,6 +1,5 @@
 import React, { useEffect, useLayoutEffect, useRef } from 'react';
 import gsap from 'gsap';
-import SplitType from 'split-type'
 import className from 'classnames/bind';
 import styles from './AnimatedText.module.scss';
 

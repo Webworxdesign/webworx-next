@@ -1,0 +1,157 @@
+.light-mode {
+    footer {
+        background-color: #f4f3e1;
+        figure.footer-logo.dark {
+            display: none;
+        }
+        .marquee {
+            background-color: transparent;
+        }
+    }
+}
+.dark-mode {
+    footer {
+        figure.footer-logo.light {
+            display: none;
+        }
+    }
+}
+footer {
+    padding: 0 var(--footer--padding--x) 0 0;
+    overflow: hidden;
+    position: relative;
+    .marquee {
+        position: relative;
+        .marquee__inner.clone {
+            display: flex;
+            position: absolute;
+            transform: translate(0,80px);
+            max-width: 1440px;
+        }
+        &:hover {
+            background-color: #222;
+            .marquee__line {
+                animation-play-state: paused;
+            }
+            svg {
+                line {
+                    transition: all 0.3s;
+                    stroke: #fff; 
+                }
+                path {
+                    transition: all 0.3s;
+                    fill: #fff; 
+                }
+            }
+        }
+    }
+    .marquee__line {
+        font-size: 3.75rem;
+        min-width: 35% !important;
+        align-content: center;
+        display: flex;
+        svg {
+            margin-left: 20px;
+        }
+    }
+    figure.footer-logo {
+        position: relative;
+        left: -100px;
+        margin: 0 !important
+    }
+    .button-outer {
+        padding: 66px 0 97px;
+        display: flex;
+        justify-content: center;
+        border: 1px solid green;
+        height: 289px;
+        .btn.btn-primary.marquee {
+            transform-style: preserve-3d;
+            width: 100%;
+            max-width: 1480px;
+            margin: 0;
+            height: 124px;
+            border-radius: 4em;
+        }
+    }
+    .outer-group {
+        margin-bottom: -12px;
+    }
+    .wp-block-group {
+        &.is-layout-flex {
+           display: flex; 
+        }
+        &.is-vertical {
+           flex-direction: column;
+        }
+        &.is-content-justification-space-between {
+            justify-content: space-between;
+        }
+        .wp-block-group__inner-container {
+            .footer-links {
+                width: 100%;
+                > .wp-block-group:not(:last-child) {
+                    display: grid;
+                    grid-template-columns: 1fr 1fr auto;
+                }
+                ul {
+                    li {
+                        a {
+                            color: #fff;
+                        }
+                    }
+                }
+                .footer-navigation {
+                    h3 {
+                        font-size: 2.5rem;
+                        margin-bottom: 37px;
+                    }
+                    ul {
+                        &.wp-block-navigation__container {
+                            margin-bottom: 94px;
+                        }
+                        li {
+                            margin-bottom: 14px;
+                            a {
+                                font-size: 1.25rem;
+                                font-weight: 300;
+                            }
+                        }
+                    }
+                }
+                .footer-bar {
+                    border-top: 1px solid var(--wwx--color--black);
+                    padding-top: 15px;
+                    position: relative;
+                    &:before {
+                        content: '';
+                        width: 4px;
+                        height: 4px;
+                        background-color: var(--wwx--color--black);
+                        transform: rotate(45deg);
+                        position: absolute;
+                        top: -3px;
+                        left: -2px;
+                    }
+                    &:after {
+                        content: '';
+                        width: 4px;
+                        height: 4px;
+                        background-color: var(--wwx--color--black);
+                        transform: rotate(45deg);
+                        position: absolute;
+                        top: -3px;
+                        right: -2px;
+                    }
+                    ul {
+                        li {
+                            a {
+                                font-size: 0.875rem;
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    }
+}

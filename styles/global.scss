@@ -9,6 +9,7 @@
 @import 'utilities';
 @import 'typography';
 @import 'header';
+@import 'footer';
 
 body {
     background-color: var(--wwx--color--white);
@@ -16,16 +17,16 @@ body {
         overflow: hidden;
     }
     &.dark-mode {
-        background-color: #222;   
+        background-color: #fff;   
         .animation-background {   
-            background-color: #fff;    
+            background-color: #222;    
             animation: backgroundAnimateDark 1.3s 0s linear forwards;
         } 
     }
     &.light-mode {
-        background-color: #fff;  
+        background-color: #222;  
         .animation-background {   
-            background-color: #222;    
+            background-color: #fff;    
             animation: backgroundAnimateLight 1.3s 0s linear forwards;
         }  
     }
@@ -37,7 +38,7 @@ body {
         left: 0;
         top: 0;
     }
-    h1, h1 span, h2, h2 span, h3, h4, h5, h6, p, #primary-menu li a {
+    h1, h1 span, h2, h2 span, h3, h4, h5, h6, p, li a {
         margin: 0;
         mix-blend-mode: difference;
         color: #fff;

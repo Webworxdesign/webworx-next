@@ -121,5 +121,28 @@
 		td {
 			padding: 0.4em;
 		}
+		.wp-block-group {
+			&.alignfull  {
+				margin-left: calc(-100vw / 2 + 100% / 2);
+				margin-right: calc(-100vw / 2 + 100% / 2);
+				max-width: 100vw;
+				width: auto;
+			}
+		}
+		.wp-block-navigation {
+			color: #fff;
+			li {
+				width: 100%;
+			}
+		}
+		.is-layout-flex {
+			display: flex;
+			.is-vertical {
+				flex-direction: column;
+			}
+		}
+		.is-content-justification-space-between {
+			justify-content: space-between;
+		}
 	}
 }
