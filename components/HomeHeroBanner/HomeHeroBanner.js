@@ -10,6 +10,7 @@ import bannerImg from './../../assets/images/home-banner-img.jpg';
 import bannerCards from './../../assets/images/banner-cards.jpg';
 import ThemeSettings from './../../constants/themeSettings';
 import AnimatedText from '../AnimatedText/Animatedtext';
+gsap.registerPlugin(ScrollTrigger);
 
 let cx = className.bind(styles);
 
@@ -23,42 +24,78 @@ export default function HomeHeroBanner() {
     const heroContainer = useRef(null);
     const bannerImgRef = useRef(null);
     const bannerDescRef = useRef(null);
+    const studioTextRef = useRef(null);
 
     useLayoutEffect( () => {
 
-        const bannerMaxWidth = ( Number(document.documentElement.clientWidth) - Number(heroContainer.current.offsetWidth) ) / 2 + Number(heroContainer.current.offsetWidth);
-
-        gsap.registerPlugin(ScrollTrigger);
-
-        const timeline = gsap.timeline({
-            scrollTrigger: { 
-                trigger: document.documentElement,
-                scrub: true, 
-                start: "top",
-                end: "800px top", 
-            },
-        })
-
-        // bannerImgRef height dependent on screen size
-        const bannerImgHeight = document.documentElement.clientWidth > 768 ? '75vh' : '30vh';
-
-        timeline
-            .fromTo( 
-                bannerImgRef.current, 
-                { duration: 50 },
-                { height: bannerImgHeight, width: bannerMaxWidth, borderTopRightRadius: 0, borderBottomRightRadius: 0, x: 10, marginTop: 0, duration: 5  }
-            )
-            .fromTo(
-                bannerDescRef.current, 
-                { opacity: 0, duration: 5 }, 
-                { opacity:1, duration: 10 }
-            ) 
-
+        const bannerImgAnime = bannerImgRef.current;
         gsap.fromTo( 
-            bannerImgRef.current, 
+            bannerImgAnime, 
             { opacity: 0},
             { opacity: 1, duration: 2, delay: 3 }
         )
+        const heroContainerWrapper = heroContainer.current;
+        gsap.to( 
+            bannerImgAnime, { 
+                height: document.documentElement.clientWidth > 768 ? '650px' : '300px', 
+                width: ( Number(document.documentElement.clientWidth) - Number(heroContainer.current.offsetWidth) ) / 2 + Number(heroContainer.current.offsetWidth), 
+                borderTopRightRadius: 0, 
+                borderBottomRightRadius: 0, 
+                x: 10, 
+                marginTop: 0, 
+                duration: 20,
+                ease: "power3.out",
+                scrollTrigger: {
+                    trigger:  heroContainerWrapper,
+                    start: "top 150px",
+                    end: "bottom 200px",
+                    scrub: true,
+                    invalidateOnRefresh: true,
+                }
+            }
+        )
+
+        const studioTextAnime = studioTextRef.current;
+        gsap.fromTo(
+            studioTextAnime, 
+            { 
+                left: '100%',
+                x: '-15%',
+            }, 
+            { 
+                left: '0%', 
+                x: '-0%',
+                duration: 5, 
+                scrollTrigger: {
+                    trigger:  heroContainerWrapper,
+                    start: "top 150px",
+                    end: "bottom 200px",
+                    scrub: true,
+                    invalidateOnRefresh: true,
+                } 
+            }
+        )
+
+        const bannerDescAnime = bannerDescRef.current;
+        gsap.fromTo(
+            bannerDescAnime, 
+            { 
+                opacity: 0, 
+            }, 
+            { 
+                opacity: 1, 
+                duration: 100, 
+                scrollTrigger: {
+                    trigger:  heroContainerWrapper,
+                    start: "top 300px",
+                    end: "bottom top",
+                    scrub: true,
+                    markers: true,
+                    invalidateOnRefresh: true,
+                }
+            }
+        )
+
     }, [])
 
     return (
@@ -79,7 +116,13 @@ export default function HomeHeroBanner() {
                     
                 </div>
                 
-                <h1><AnimatedText text="Development" delay={2} /></h1>
+                <h1>
+                    <AnimatedText text="Development" delay={2} />
+                    <div className={cx('studio-text')} ref={studioTextRef}>
+                        <AnimatedText text="Studio" delay={3} />
+                    </div>
+
+                </h1>
                 <div  className={cx('banner-description')} ref={bannerDescRef}>
                     <h3>that help businesses to connect with customers in a meaningful way</h3>
                     <button className="btn btn-primary marquee" style={{width: '200px'}}>

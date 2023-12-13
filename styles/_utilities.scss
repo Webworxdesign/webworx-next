@@ -255,165 +255,24 @@ body {
     }
 }
 
-// Container 
-.container {
-    max-width: var(--wwx--container--max-width);
-    width: 100%;
-    padding-right: var(--wwx--content--padding--right);
-    padding-left: var(--wwx--content--padding--left);
-    margin-right: auto;
-    margin-left: auto;
-    @media only screen and (max-width: 781px) {
-        padding-right: var(--wwx--content--padding--right--mobile);
-        padding-left: var(--wwx--content--padding--left--mobile);
-    }
-}
-@each $container_abbr, $container_size in ("sm": "540", "md": "781", "lg": "960", "xl": "1140", "xxl": "1320") { 
-    @media only screen and (min-width: #{$container_size}px) {
-        .container-#{$container_abbr} {
-            max-width: #{$container_size}px;
-        }
-    }
-}
-
-// Rows and Columns
-$grid-columns:12;
-$grid-gutter:1.5em;
-
-$xs-breakpoint: 0;
-$sm-breakpoint:576px;
-$md-breakpoint:768px;
-$lg-breakpoint:992px;
-$xl-breakpoint:1200px;
-
-.row {
-  display: grid;
-  grid-template-columns: repeat($grid-columns, 1fr);/*cols x freespace*/ 
-  grid-gap: $grid-gutter;
-}
-
-/* Build Bootstrap's Grid */
-@for $i from 1 through $grid-columns {
-  .col-xs-#{$i} {
-    grid-column: span ($i);
-  }
-}
-@for $i from 1 through $grid-columns {
-  .col-sm-#{$i} {
-    grid-column: span ($i);
-  }
-}
-@for $i from 1 through $grid-columns {
-  .col-md-#{$i} {
-    grid-column: span ($i);
-  }
-}
-@for $i from 1 through $grid-columns {
-  .col-lg-#{$i} {
-    grid-column: span ($i);
-  }
-}
-@for $i from 1 through $grid-columns {
-  .col-xl-#{$i} {
-    grid-column: span ($i);
-  }
-}
-
-/* Bootstrap grid break points */
-/* extra small */
-@media (max-width: $sm-breakpoint) {
-  @for $i from 1 through $grid-columns {
-    .col-xs-#{$i} {
-      grid-column: span ($i);
-    }
-  }
- /* helper classes */
-  .hidden-xs {display:none;}
-}
-
-
-/* small */
-@media (min-width:$sm-breakpoint) and (max-width: $md-breakpoint) {
-  @for $i from 1 through $grid-columns {
-    .col-sm-#{$i} {
-      grid-column: span ($i);
-    }
-  }
- /* helper classes */
-  .hidden-sm {display:none;}
-}
-
-/* medium */
-@media ($md-breakpoint) and (max-width: $lg-breakpoint) {
-  @for $i from 1 through $grid-columns {
-    .col-md-#{$i} {
-      grid-column: span ($i);
-    }
-  }
- /* helper classes */
-  .hidden-md {display:none;}
-}
-
-/* large */
-@media (min-width:$lg-breakpoint) and (max-width: $xl-breakpoint) {
-  @for $i from 1 through $grid-columns {
-    .col-lg-#{$i} {
-      grid-column: span ($i);
-    }
-  }
- /* helper classes */
-  .hidden-lg {display:none;}
-}
-
-/*extra large */
-@media (min-width:$xl-breakpoint) {
-  @for $i from 1 through $grid-columns {
-    .col-xl-#{$i} {
-      grid-column: span ($i);
-    }
-  }
- /* helper classes */
-  .hidden-xl {display:none;}
-}
-
-// additional styling
-.hidebottomborder {border-bottom:none;}
-
-// offset, push and pull require more work
-@for $i from 1 through $grid-columns {
-  .offset-#{$i} {
-      grid-column-start: ($i + 1);
-      grid-column-end: span ($grid-columns - $i);
-    }  
-  .push-#{$i} {
-      grid-column-start: ($i + 1);
-      grid-column-end: span ($i);
-    }
-  .pull-#{$i} {
-      grid-column-start: ($grid-columns - $i);
-      grid-column-end: span ($i);
-    }
-}
-
-
 button {
     &.marquee { 
         display: block;
-        background-color: var(--wwx--color--white);
-        border: 1px solid var(--wwx--color--black); 
+        background-color: var(--wwx--color--black);
+        border: 1px solid var(--wwx--color--white); 
         border-radius: 50px;
         font-family: 'Poly Sans';
         font-size: 22px;
         font-weight: 300;
         line-height: 100%;
-        color: var(--wwx--color--black);
+        color: var(--wwx--color--white);
         padding: 13px 17px 15px;
         transition: all 0.3s ease-in-out;
         cursor: pointer;
         overflow: hidden;
         &:hover {
-            background-color: var(--wwx--color--black);
-            color: var(--wwx--color--white);
+            background-color: var(--wwx--color--white);
+            color: var(--wwx--color--black);
         }
         .marquee__inner {
             display: flex;

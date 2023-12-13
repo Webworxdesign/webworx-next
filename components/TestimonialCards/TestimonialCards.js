@@ -19,6 +19,7 @@ export default function TestimonialCards() {
     const [loaded, setLoaded] = useState(false);
     const [btnHover, setBtnHover] = useState(false);
     const [perView, setPerView] =useState(0);
+    const [sliderItemsAmount, setSliderItemsAmount] = useState(0);
 
     // Gsap Animations   
     const toggleSliderBtn = useRef(); 
@@ -76,7 +77,7 @@ export default function TestimonialCards() {
 
     const [sliderOff, setSliderOff] = useState(false);
 
-    useLayoutEffect(() => {
+    useEffect(() => {
       setTimeout(() => {
         let btnTopPos = '35%';
         let btnLeftPos = '30%';
@@ -89,6 +90,7 @@ export default function TestimonialCards() {
           .to(toggleSliderBtn.current, 0.1, { top: btnTopPos, left: btnLeftPos, delay: 0.15 })
           .to(toggleSliderBtn.current, 0.1, { opacity: 1, delay: 0.15 });
   
+        
         SliderItemsRefs.current.forEach( (slideItem, index) => {
           const slideItemWidth = slideItem ? slideItem.offsetWidth : 0;
           const positionTopArray = [0, 30, 10, 55, 70];
@@ -125,18 +127,24 @@ export default function TestimonialCards() {
           );
   
         })
+
       }, 500);
+
       
+
+
+    console.log('sliderItemsAmount', sliderItemsAmount)
   
   
-  
-    }, [loading, data]);
+    }, [sliderItemsAmount]);
   
     useEffect(() => {
       if (play) {
+        setSliderItemsAmount(SliderItemsRefs.current.length);
         buttonTimeline.play();
         slidesTimeline.play()
       } else {
+        setSliderItemsAmount(SliderItemsRefs.current.length);
         buttonTimeline.reverse();
         slidesTimeline.reverse()
       }
@@ -144,8 +152,10 @@ export default function TestimonialCards() {
   
     useEffect(() => {
       if (btnHover && sliderStatus) {
+        setSliderItemsAmount(SliderItemsRefs.current.length);
         slidesHoverRotateTimeline.play();
       } else {
+        setSliderItemsAmount(SliderItemsRefs.current.length);
         slidesHoverRotateTimeline.reverse();
       }
     }, [btnHover]);

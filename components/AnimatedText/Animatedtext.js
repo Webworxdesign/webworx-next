@@ -11,19 +11,6 @@ const AnimatedText = ({ text, delay = 0 }) => {
 
   useLayoutEffect(() => {
     const letters = textRef.current.children;
- 
-    // gsap.fromTo(letters, {
-    //   opacity: 0,
-    //   top: 20,
-    //   stagger: 0.1, // Stagger the animations with a 0.1s delay between each letter
-    //   ease: 'power1.out',
-    // }, {
-    //     opacity: 1,
-    //     top: 0,
-    //     stagger: 0.1, 
-    //     delay: delay,
-    //     ease: 'power1.out', 
-    // });
 
     gsap.fromTo(
       letters,
