@@ -49,12 +49,12 @@
 			width: 100%;
 			white-space: nowrap;
 			text-align: center;
-	
+			text-decoration: none;
+			
 			svg {
 				margin-left:5px
 			}
 	
-			&:hover,
 			&:focus {
 				color: var(--wwx--navigation-menu--color--hover);
 			}
