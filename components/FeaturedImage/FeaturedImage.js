@@ -21,7 +21,6 @@ export default function FeaturedImage({
       <Image
         src={src}
         alt={altText}
-        layout={layout}
         width={width}
         height={height}
         priority={priority}

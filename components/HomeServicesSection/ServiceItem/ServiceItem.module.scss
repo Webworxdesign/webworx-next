@@ -1,3 +1,5 @@
+@import "styles/breakpoints";
+
 .service {
     display: flex;
     width: 100%;
@@ -18,7 +20,7 @@
         }
     }
     h2 {
-        font-size: 55px;
+        font-size: 3.5rem;
         font-weight: 300; 
         margin: 0px;
         transition: all 0.4s;
@@ -27,7 +29,7 @@
         p {
             display: block;
             width: 300px;
-            font-size: 25px;
+            font-size: 1.5rem;
             font-weight: 400;
             line-height: 120%;
             transition: all 0.4s;
@@ -40,5 +42,39 @@
     &:last-of-type {
         padding-bottom: 0px;
         border-bottom: none;
+    }
+    @media (max-width: 781px) {
+        flex-wrap: wrap;
+        padding-left: 0;
+        padding-right: 0;
+        h2 {
+            width: 100%;
+            margin-bottom: 10px;
+            &:hover {
+                transform: unset;
+            }
+        }
+        .service-items {
+            width: 100%;
+            transform: unset;
+            p {
+                font-size: 1.2rem;
+            }
+        }
+        &:hover {
+            h2 {
+                transform: unset;
+            }
+            .service-items {
+                p {
+                    transform: unset;
+                }
+            }
+        }
+    }
+    @media (max-width: $breakpoint-small) {
+        h2 {
+            font-size: 2rem;
+        }
     }
 }

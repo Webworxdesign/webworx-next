@@ -17,7 +17,6 @@ import { HomeHeroBanner } from '../components/HomeHeroBanner';
 import { ProjectScroller } from '../components/ProjectScroller';
 import HomeServiceSection from '../components/HomeServicesSection/HomeSevicesSection';
 import Noise from '../assets/gifs/animated-grain.gif'
-import { TestimonialCards } from '../components/TestimonialCards';
 import { ReviewCarouselHome } from '../components/ReviewCarousel';
 
 export default function Component() {

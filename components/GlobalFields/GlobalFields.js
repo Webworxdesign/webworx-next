@@ -7,7 +7,7 @@ export default function GlobalFields() {
   const { containerWidth, tag, contentPadding } = ThemeSettings();
   const { headerPadding, headerPaddingMobile } = HeaderSettings();
   const { footerXAxisPadding, footerYAxisPadding } = FooterSettings();
-  console.log(FooterSettings());
+  // console.log(FooterSettings());
   
   const { contentPaddingLeft = null, contentPaddingRight = null, contentPaddingRightMobile = null, contentPaddingLeftMobile = null } = contentPadding ? contentPadding : {};
 

@@ -64,8 +64,9 @@ export default function HomeHeroBanner() {
             }, 
             { 
                 left: '0%', 
-                x: '-0%',
-                duration: 5, 
+                x: '0%',
+                duration: 10, 
+                ease: "power3.out",
                 scrollTrigger: {
                     trigger:  heroContainerWrapper,
                     start: "top 150px",
@@ -77,18 +78,20 @@ export default function HomeHeroBanner() {
         )
 
         const bannerDescAnime = bannerDescRef.current;
-        console.log('bannerb',bannerDescAnime);
         gsap.fromTo(
             bannerDescAnime, 
             { 
                 opacity: 0, 
+                y: 100,
             }, 
             { 
                 opacity: 1, 
-                duration: 100, 
+                y: 0,
+                duration: 20, 
+                ease: "power3.out",
                 scrollTrigger: {
                     trigger:  heroContainerWrapper,
-                    start: "top 200px",
+                    start: "top 100px",
                     end: "bottom top",
                     scrub: true,
                     markers: true,

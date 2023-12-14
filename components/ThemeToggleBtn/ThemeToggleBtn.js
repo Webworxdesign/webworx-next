@@ -14,7 +14,7 @@ const ThemeToggleBtn = () => {
   const [darkMode, setDarkMode] = useLocalStorage("darkMode", false);
 
   useEffect(() => {
-    console.log(darkMode);
+    // console.log(darkMode);
     if (darkMode) {
       document.body.classList.remove("light-mode");
       document.body.classList.add("dark-mode");

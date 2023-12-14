@@ -14,24 +14,17 @@ import {
 } from '../components';
 import { GlobalFields } from '../components/GlobalFields';
 
-export default function Component(props) {
-  // Loading state for previews
-  if (props.loading) {
-    return <>Loading...</>;
-  }
-
-  const { title: siteTitle, description: siteDescription } =
-    props?.data?.generalSettings;
+export default function SingleService(props) {
+  const { title: siteTitle, description: siteDescription } = props?.data?.generalSettings;
   const primaryMenu = props?.data?.headerMenuItems?.nodes ?? [];
   const footerMenu = props?.data?.footerMenuItems?.nodes ?? [];
-  const { title, content, featuredImage, date, author } = props.data.post;
+  const { title, content } = props.data.nodeByUri;
 
   return (
     <>
       <SEO
-        title={siteTitle}
-        description={siteDescription}
-        imageUrl={featuredImage?.node?.sourceUrl}
+        title={`${siteTitle} - ${title}`}
+        description={siteDescription} 
       />
       <GlobalFields />
       <Header
@@ -41,12 +34,12 @@ export default function Component(props) {
       />
       <Main>
         <>
-          <EntryHeader
+          {/* <EntryHeader
             title={title}
             image={featuredImage?.node}
             date={date}
             author={author?.node?.name}
-          />
+          /> */}
           <Container>
             <ContentWrapper content={content} />
           </Container>
@@ -57,26 +50,29 @@ export default function Component(props) {
   );
 }
 
-Component.query = gql`
+SingleService.variables = ({ uri }) => {
+  return { 
+    uri, 
+    headerLocation: MENUS.PRIMARY_LOCATION,
+    footerLocation: MENUS.FOOTER_LOCATION, 
+  };
+};
+
+SingleService.query = gql`
   ${BlogInfoFragment}
   ${NavigationMenu.fragments.entry}
-  ${FeaturedImage.fragments.entry}
-  query GetPost(
-    $databaseId: ID!
+  query GetServiceByUri(
+    $uri: String! 
     $headerLocation: MenuLocationEnum
     $footerLocation: MenuLocationEnum
-    $asPreview: Boolean = false
   ) {
-    post(id: $databaseId, idType: DATABASE_ID, asPreview: $asPreview) {
-      title
-      content
-      date
-      author {
-        node {
-          name
-        }
+    nodeByUri(uri: $uri, ) {
+      ... on NodeWithTitle {
+        title
       }
-      ...FeaturedImageFragment
+      ... on NodeWithContentEditor {
+        content
+      } 
     }
     generalSettings {
       ...BlogInfoFragment
@@ -93,12 +89,3 @@ Component.query = gql`
     }
   }
 `;
-
-Component.variables = ({ databaseId }, ctx) => {
-  return {
-    databaseId,
-    headerLocation: MENUS.PRIMARY_LOCATION,
-    footerLocation: MENUS.FOOTER_LOCATION,
-    asPreview: ctx?.asPreview,
-  };
-};

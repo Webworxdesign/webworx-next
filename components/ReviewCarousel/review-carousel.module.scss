@@ -1,3 +1,5 @@
+@import "styles/breakpoints";
+
 .reviewCarouselWrapper {
     .keen-slider {
         transition: padding-left 0.3s ease-in-out;
@@ -24,20 +26,26 @@
         position: relative;
     }
     .testimonial-content {
-        font-size: 22px;
+        font-size: 1.4rem;
         font-weight: 300;
         line-height: 140%; 
         margin-bottom: 20px; 
+        @media (max-width: $breakpoint-medium) {
+            font-size: 1.2rem;
+        }
     }
     .testimonial-author {
         font-family: 'Poly Sans'; 
-        font-size: 22px;
+        font-size: 1.4rem;
         font-weight: 300;
         line-height: 140%;
         letter-spacing: -0.25px; 
+        @media (max-width: $breakpoint-medium) {
+            font-size: 1.2rem;
+        }
     }
     .testimonial-company {
-        font-size: 16px;
+        font-size: 1rem;
         font-weight: 300;
         line-height: 120%;
     }
@@ -46,10 +54,10 @@
         background-color: var(--wwx--color--accent);
         padding: 17px 58px;
         font-family: 'Poly Sans';
-        font-size: 26px;
+        font-size: 1.6rem;
         font-weight: 300;
         line-height: 100%;
-        color: var(--wwx--color--white);
+        color: var(--wwx--color--black);
         cursor: pointer;
         border-radius: 50px; 
         border: none;
@@ -61,7 +69,7 @@
         left: unset;
         transform: translateX(-50%);
         @media only screen and (max-width: 1280px) {
-            font-size: 20px;
+            font-size: 1.25rem;
             padding: 8px 16px;
             top: 30%;
             left: 10%;
@@ -70,6 +78,9 @@
     .slider-item {
         div {
             overflow: visible !important;
+        }
+        * {
+            color: var(--wwx--color--black);
         }
         .testimonial-image {
             display: block;
@@ -161,23 +172,40 @@
         }
         .overline {
             font-family: 'Open Sans';
-            font-size: 25px;
+            font-size: 1.5rem;
             font-weight: 400;
             line-height: 150%;
             margin-bottom: 10px;
+            color: var(--wwx--color--black);
+            @media only screen and (max-width: 1080px) {
+                font-size: 1.3rem;
+            }
         }
         h2 {
             font-family: 'Poly Sans';
-            font-size: 80px;
+            font-size: 5rem;
             font-weight: 300;
             line-height: 100%;
             margin-bottom: 35px;
+            color: var(--wwx--color--black);
+            @media only screen and (max-width: 1080px) {
+                font-size: 4rem;
+                margin-bottom: 25px;
+            }
+            @media only screen and (max-width: $breakpoint-small) {
+                font-size: 3rem;
+                margin-bottom: 15px;
+            }
         }
         .description {
             font-family: 'Open Sans';
-            font-size: 25px;
+            font-size: 1.5rem;
             font-weight: 300;
             line-height: 150%;
+            color: var(--wwx--color--black);
+            @media only screen and (max-width: 1080px) {
+                font-size: 1.3rem;
+            }
         }
 
     }
