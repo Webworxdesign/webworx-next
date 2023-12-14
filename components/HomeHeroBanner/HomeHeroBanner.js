@@ -87,10 +87,10 @@ export default function HomeHeroBanner() {
                 duration: 100, 
                 scrollTrigger: {
                     trigger:  heroContainerWrapper,
-                    start: "top 300px",
+                    start: "top 200px",
                     end: "bottom top",
                     scrub: true,
-                    markers: false,
+                    markers: true,
                     invalidateOnRefresh: true,
                 }
             }

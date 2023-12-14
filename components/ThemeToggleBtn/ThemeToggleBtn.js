@@ -29,7 +29,7 @@ const ThemeToggleBtn = () => {
       id="theme-mode-button"
       aria-label="Toggle Dark Mode" 
       className={[cx('toggle-button', darkMode ? 'toggled' : '' )]} 
-      onClick={() => setDarkMode(!darkMode)}>
+      onClick={() => setDarkMode(!darkMode)} >
       <div className={ cx('knobs') }>{ darkMode ? <Moon /> : <Sun /> }</div>
       <div className={ cx('layer') }></div>
     </button>

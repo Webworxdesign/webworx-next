@@ -16,8 +16,7 @@
         }
     }
 }
-footer {
-    padding: 0 var(--footer--padding--x) 0 0;
+footer {    
     overflow: hidden;
     position: relative;
     .marquee {
@@ -63,7 +62,6 @@ footer {
         padding: 66px 0 97px;
         display: flex;
         justify-content: center;
-        border: 1px solid green;
         height: 289px;
         .btn.btn-primary.marquee {
             transform-style: preserve-3d;
@@ -76,6 +74,7 @@ footer {
     }
     .outer-group {
         margin-bottom: -12px;
+        padding: 0 var(--footer--padding--x) 0 0;
     }
     .wp-block-group {
         &.is-layout-flex {

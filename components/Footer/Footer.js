@@ -16,6 +16,7 @@ export default function Footer({ title, menuItems }) {
   const buttonTrackClone = useRef()
   const projectButton = useRef()
   const buttonOuter = useRef()
+  const [pageLoaded,setPageLoaded] = useState(false)
   const [hoverState,setHoverState] = useState(false)
   const [buttonHoverPos,setButtonHoverPos] = useState({x:0,y:0})
   
@@ -76,9 +77,45 @@ export default function Footer({ title, menuItems }) {
       rotationX: buttonHoverPos.x,
       ease: "power4.out",
     });
-    console.log(buttonHoverPos);
   },[buttonHoverPos])
 
+  //Attach event listeners to footer elements
+  useEffect(()=>{
+    setTimeout(() => {
+
+      const footerLogo = document.querySelectorAll('.social-icons figure')
+      footerLogo.forEach((ele)=>{
+        const xTo = gsap.quickTo(ele, "x", {duration: 1, ease: "elastic.out(1, 0.3)"})        
+        const yTo = gsap.quickTo(ele, "y", {duration: 1, ease: "elastic.out(1, 0.3)"})       
+        
+        const mouseMove = (e) => {          
+          const { clientX, clientY } = e;          
+          const {height, width, left, top} = ele.getBoundingClientRect();          
+          const x = clientX - (left + width/2)          
+          const y = clientY - (top + height/2)          
+          xTo(x)          
+          yTo(y)          
+        }        
+        
+        const mouseLeave = (e) => {          
+          gsap.to(ele, {x: 0, duration: 0.6})          
+          gsap.to(ele, {y: 0, duration: 0.6})          
+          xTo(0)          
+          yTo(0)          
+        }        
+        
+        ele.addEventListener("mousemove", mouseMove)        
+        ele.addEventListener("mouseleave", mouseLeave)        
+        
+        return () => {          
+          ele.removeEventListener("mousemove", mouseMove)          
+          ele.removeEventListener("mouseleave", mouseLeave)          
+        }
+      })
+    }, 2000)
+
+  },[])
+  
   const buttonHover = (e) => {
     const bounding = e.target.getBoundingClientRect()
     setButtonHoverPos({
@@ -87,7 +124,7 @@ export default function Footer({ title, menuItems }) {
       x:(Math.round(bounding.x + Number.EPSILON))/10,
       y:(Math.round(bounding.y + Number.EPSILON))/10
     })
-    console.log('happening',buttonOuter.current.getBoundingClientRect() );
+    // console.log('happening',buttonOuter.current.getBoundingClientRect() );
   }
 
   return (

@@ -29,5 +29,8 @@
   "engines": {
     "node": ">=16",
     "npm": ">=8"
+  },
+  "devDependencies": {
+    "file-loader": "^6.2.0"
   }
 }

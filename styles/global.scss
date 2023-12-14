@@ -16,8 +16,24 @@
 
 body {
     background-color: var(--wwx--color--white);
+    #theme-mode-button {
+        opacity: 1;
+        transition: opacity 1s ease-in-out;
+    }
     &.menu-open {
         overflow: hidden;
+        header {
+            .inside-header {
+                #theme-mode-button {
+                    opacity: 0;
+                }
+                a svg {
+                    path {
+                        fill: #222;
+                    }
+                }
+            }
+        }
     }
     &.dark-mode {
         background-color: #fff;   
