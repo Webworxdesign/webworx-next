@@ -5,8 +5,9 @@
     align-items: center;
     padding: 50px 10px 35px 10px;
     border-bottom: 1px solid rgba(160, 161, 163, 0.20);
-    cursor: pointer;
     transition: all 0.2s;
+    mix-blend-mode: difference;
+    cursor: pointer;
     &:hover {
         opacity: 0.5;
         h2 {

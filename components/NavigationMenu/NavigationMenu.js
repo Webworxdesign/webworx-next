@@ -73,7 +73,6 @@ export default function NavigationMenu({ menuItems, className }) {
                     }
                   }
 
-
                   return (
                     <motion.li key={id} className={cxFromWp(cssClasses)} variants={slide} initial="initial" animate="enter" exit="exit">
 

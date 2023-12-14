@@ -90,7 +90,7 @@ export default function HomeHeroBanner() {
                     start: "top 300px",
                     end: "bottom top",
                     scrub: true,
-                    markers: true,
+                    markers: false,
                     invalidateOnRefresh: true,
                 }
             }

@@ -9,6 +9,12 @@
     border-radius: 100px;
     background-color: transparent;
     cursor: pointer;
+    svg {
+        border-radius: 50%;
+        height: 100%;
+        width: 100%;
+        padding: 4px;        
+    }
     .knobs, .layer {
         position: absolute;
         top: 0;
@@ -21,7 +27,7 @@
         z-index: 2;
         position: absolute;
         top: -2px;
-        left: 0px;
+        left: -1px;
         width: 30px;
         height: 30px;
         color: #fff;
@@ -39,13 +45,10 @@
     }
     &.toggled {
         .knobs {
-            left: 28px;
+            left: 29px;
         }
-        svg path {
-            fill: #000;
-        }
-        // .layer {
-        //     background-color: #ffffff;
+        // svg path {
+        //     fill: #000;
         // }
     }
 }

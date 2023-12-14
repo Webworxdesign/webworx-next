@@ -41,7 +41,7 @@ body {
         left: 0;
         top: 0;
     }
-    h1, h1 span, h2, h2 span, h3, h4, h5, h6, p, li a {
+    h1, h1 span, h2:not(.section-title), h2 span, h3:not(.section-title), h4, h5, h6, p, ul:not(#primary-menu) li a {
         margin: 0;
         mix-blend-mode: difference;
         color: #fff;

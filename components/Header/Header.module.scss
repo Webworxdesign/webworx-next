@@ -3,7 +3,6 @@
 .site-header {
 	position: relative;
 	z-index: 999;
-	mix-blend-mode: difference;
 	.component {
 		color: var(--wwx--header--color);
 		background-color: var(--wwx--header--background-color);
@@ -183,4 +182,8 @@
 		}
 	}
 	 
+}
+.menuWrapper {
+	z-index: 10;
+	position: relative;
 }

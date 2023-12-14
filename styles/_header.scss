@@ -25,6 +25,11 @@
 .rtl .main-navigation .main-nav ul li.menu-item-has-children > a {
     padding-right: 20px;
 }
+body:not(.menu-open) {
+	header {
+		mix-blend-mode: difference;
+	}
+}
 
 @media ( max-width: 2080px ) {
     .nav-align-right .inside-navigation, 

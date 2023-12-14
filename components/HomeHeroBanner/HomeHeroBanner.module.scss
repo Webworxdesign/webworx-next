@@ -68,8 +68,8 @@
     }
     .banner-description {
         display: block;
-        opacity: 0;
         margin-left: 32%;
+        mix-blend-mode: difference;
     }
     .studio-text {
         position: relative;
@@ -87,8 +87,6 @@
         font-weight: 400;
         line-height: 120%;
         margin-bottom: 50px;
-        color: #fff;
-        mix-blend-mode: difference;
     }
     @media (max-width: $breakpoint-medium) {
         h1 {

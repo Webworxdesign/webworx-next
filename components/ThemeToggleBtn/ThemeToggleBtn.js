@@ -4,6 +4,8 @@ import styles from './ThemeToggleBtn.module.scss';
 import DarkModeIcon from "../../assets/svg/DarkModeIcon";
 import LightModeIcon from "../../assets/svg/LightModeIcon";
 import useLocalStorage from '../../useLocalStorage/useLocalStorage';
+import Moon from "../../assets/svg/MoonIcon";
+import Sun from "../../assets/svg/SunIcon";
 
 let cx = classNames.bind(styles);
 
@@ -24,10 +26,11 @@ const ThemeToggleBtn = () => {
 
   return (
     <button 
+      id="theme-mode-button"
       aria-label="Toggle Dark Mode" 
       className={[cx('toggle-button', darkMode ? 'toggled' : '' )]} 
       onClick={() => setDarkMode(!darkMode)}>
-      <div className={ cx('knobs') }>{ darkMode ? <DarkModeIcon /> : <LightModeIcon /> }</div>
+      <div className={ cx('knobs') }>{ darkMode ? <Moon /> : <Sun /> }</div>
       <div className={ cx('layer') }></div>
     </button>
   );
