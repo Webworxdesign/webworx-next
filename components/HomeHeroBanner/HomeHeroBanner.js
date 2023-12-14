@@ -77,6 +77,7 @@ export default function HomeHeroBanner() {
         )
 
         const bannerDescAnime = bannerDescRef.current;
+        console.log('bannerb',bannerDescAnime);
         gsap.fromTo(
             bannerDescAnime, 
             { 
