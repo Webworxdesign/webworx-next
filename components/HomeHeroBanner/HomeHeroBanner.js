@@ -92,7 +92,7 @@ export default function HomeHeroBanner() {
                 scrollTrigger: {
                     trigger:  heroContainerWrapper,
                     start: "top 100px",
-                    end: "bottom top",
+                    end: "bottom top 400px",
                     scrub: true,
                     markers: true,
                     invalidateOnRefresh: true,
@@ -129,7 +129,7 @@ export default function HomeHeroBanner() {
                 </h1>
                 <div  className={cx('banner-description')} ref={bannerDescRef}>
                     <h3>that help businesses to connect with customers in a meaningful way</h3>
-                    <button className="btn btn-primary marquee" style={{width: '200px'}}>
+                    <button className={cx('btn', 'btn-primary', 'marquee')} style={{width: '200px'}}>
                         <div className="marquee__inner">
                             <span className="marquee__line">Start a project +</span>
                             <span className="marquee__line">Start a project +</span>

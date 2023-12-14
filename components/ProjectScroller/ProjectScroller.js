@@ -6,6 +6,7 @@ import gsap from 'gsap';
 import { ScrollTrigger } from 'gsap/dist/ScrollTrigger';
 import className from 'classnames/bind';
 import styles from './ProjectScroller.module.scss';
+import Link from 'next/link';
 
 let cx = className.bind(styles);
 
@@ -19,6 +20,7 @@ query Projects {
         }
       }
       title
+      link
     }
   }
 }
@@ -79,7 +81,7 @@ export default function ProjectScroller({ }) {
                 <div className={cx('pin-wrap')} ref={sectionRef}>
                     { projects.map((project, index) => (
                         
-                        <div className={cx('project-item')} key={index}>
+                        <Link href={project.link} className={cx('project-item')} key={index}>
                             <div className={cx('project-image')}>
                                 {project.featuredImage.node.mediaItemUrl ? (
                                     <Image
@@ -94,7 +96,7 @@ export default function ProjectScroller({ }) {
                             </div>
                             <h3 className={cx('project-title')}>{project.title}</h3>
 
-                        </div>
+                        </Link>
                     ))}
                 </div>    
             </div>     
