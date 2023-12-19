@@ -7,7 +7,8 @@ export default function GlobalFields() {
   const { containerWidth, tag, contentPadding } = ThemeSettings();
   const { headerPadding, headerPaddingMobile } = HeaderSettings();
   const { footerXAxisPadding, footerYAxisPadding } = FooterSettings();
-  // console.log(FooterSettings());
+  const { footerXAxisPaddingMobile, footerYAxisPaddingMobile } = FooterSettings();
+  console.log(FooterSettings());
   
   const { contentPaddingLeft = null, contentPaddingRight = null, contentPaddingRightMobile = null, contentPaddingLeftMobile = null } = contentPadding ? contentPadding : {};
 
@@ -15,6 +16,8 @@ export default function GlobalFields() {
   const headerPaddingMobileVariable = headerPaddingMobile ? '--inside--header--padding--mobile: ' + headerPaddingMobile + ';' : '';
   const footerPaddingX = footerXAxisPadding ? '--footer--padding--x: ' + footerXAxisPadding + 'px;' : '0px';
   const footerPaddingY = footerYAxisPadding ? '--footer--padding--y: ' + footerYAxisPadding + 'px;' : '0px';
+  const footerPaddingXMobile = footerXAxisPaddingMobile ? '--footer--padding--x--mobile: ' + footerXAxisPaddingMobile + 'px;' : '0px';
+  const footerPaddingYMobile = footerYAxisPaddingMobile ? '--footer--padding--y--mobile: ' + footerYAxisPaddingMobile + 'px;' : '0px';
   const containerWidthVariable = containerWidth ? '--wwx--container--max-width: ' +  containerWidth + 'px;' : '--wwx--container--max-width: 1280px;';
   const contentMaxWidthVariable = containerWidth ? '--wwx--content--max-width: ' +  containerWidth + 'px;' : '--wwx--content--max-width: 1280px;';
   const contentPaddingLeftVariable = contentPaddingLeft ? '--wwx--content--padding--left: ' +  contentPaddingLeft + 'px;' : '--wwx--content--padding--left: 40px;';
@@ -50,6 +53,8 @@ export default function GlobalFields() {
           ${headerPaddingMobileVariable}
           ${footerPaddingX}
           ${footerPaddingY}
+          ${footerPaddingXMobile}
+          ${footerPaddingYMobile}
           ${containerWidthVariable}
           ${contentMaxWidthVariable}
           ${contentPaddingLeftVariable}

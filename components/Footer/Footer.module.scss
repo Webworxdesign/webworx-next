@@ -6,3 +6,12 @@
 	margin: 2rem 0;
 	text-align: center;
 }
+
+footer {
+	button.marquee {
+		border-color: #222!important;
+		.marquee__line {
+			color: #222;
+		}
+	}
+}

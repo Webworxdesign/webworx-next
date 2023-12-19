@@ -65,7 +65,7 @@ export default function Header({
               playSound('menu-sound')
             }
             }>
-            <span className={cx('icon-menu-bars')}>
+            <span className={ `icon-menu-bars ${cx('icon-menu-bars')} ` }>
               <span></span><span></span><span></span><span></span>
             </span>
             <span className="screen-reader-text">Menu</span>		

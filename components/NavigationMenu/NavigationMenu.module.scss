@@ -3,12 +3,10 @@
 .component {
 	background-color: var(--wwx--navigation-menu--background-color);
 }
-
 .main-navigation {
     height: 100vh;
 	width: 100%;
-    position: fixed;
-	background-color: #F4F3E1;
+    position: fixed;	
     right: 0;
     top: 0;
 	.inside-navigation {

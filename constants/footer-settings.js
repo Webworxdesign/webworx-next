@@ -7,6 +7,8 @@ query header_settings {
             padding {
             footerXAxisPadding
             footerYAxisPadding
+            footerXAxisPaddingMobile
+            footerYAxisPaddingMobile
             }
         }
     }

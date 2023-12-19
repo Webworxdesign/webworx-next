@@ -34,6 +34,7 @@ footer {
         }
         &:hover {
             background-color: #222;
+            border-color: #fff !important;
             .marquee__line {
                 animation-play-state: paused;
                 color: #fff;
@@ -248,8 +249,9 @@ footer {
                 padding: 40px 0 40px;
                 .social-icons > figure {
                     display: flex;
-                    justify-content: right;
-                    min-width: 40px;
+                    justify-content: center;
+                    width: 40px;
+                    margin-left: auto;
                 }
                 figure.footer-logo {
                     bottom: 0;
@@ -260,6 +262,9 @@ footer {
                 .wp-block-group {
                     &:not(:last-child) {
                         grid-template-columns: 1fr 1fr;
+                        &:not(.footer-navigation)  {
+                            padding-right: 25px!important;
+                        }
                     }
                     &:nth-child(2) {
                         padding-right: 0px!important;
@@ -295,6 +300,12 @@ footer {
     }
 }
 
+@media screen and (max-width: 768px) {
+    footer .outer-group {
+        padding: var(--footer--padding--y--mobile) var(--footer--padding--x--mobile);
+    }
+}
+
 @media screen and (max-width: 530px) {
     footer {
         .wp-block-group.outer-group .wp-block-group__inner-container .footer-links {
@@ -304,6 +315,16 @@ footer {
                     left: -120px;
                 }
             }
+        }
+    }
+}
+
+@media screen and (max-width: 470px) {
+    footer .outer-group .wp-block-group__inner-container .footer-links .wp-block-group:not(:last-child) {
+        grid-template-columns: 1fr;
+        grid-gap: 15px;
+        h3 {
+            margin-bottom: 18px;
         }
     }
 }

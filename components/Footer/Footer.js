@@ -4,7 +4,6 @@ import classNames from 'classnames/bind';
 import { Container, ContentWrapper, NavigationMenu } from '../../components';
 import { gql, useQuery } from '@apollo/client';
 import styles from './Footer.module.scss';
-import Image from 'next/image';
 import ProjectArrow from '../../assets/svg/PorjectArrow';
 
 let cx = classNames.bind(styles);
@@ -16,7 +15,6 @@ export default function Footer({ title, menuItems }) {
   const buttonTrackClone = useRef()
   const projectButton = useRef()
   const buttonOuter = useRef()
-  const [pageLoaded,setPageLoaded] = useState(false)
   const [hoverState,setHoverState] = useState(false)
   const [buttonHoverPos,setButtonHoverPos] = useState({x:0,y:0})
   
@@ -125,7 +123,7 @@ export default function Footer({ title, menuItems }) {
     
           const xPercent = ((clientX - left) / width - 0.5) // Normalize mouse position
           const yPercent = ((clientY - top) / height - 0.5) * 4
-          console.log(yPercent,xPercent);
+          
           gsap.to(ele, {
             duration: 0.5,
             rotationX: 10 * yPercent, // Adjust the tilt sensitivity by changing the multiplier
@@ -160,18 +158,18 @@ export default function Footer({ title, menuItems }) {
   return (
     <footer className={cx('component')} >
       <div className="button-outer" ref={buttonOuter} >
-        <button className="btn btn-primary marquee" onMouseEnter={() => {setHoverState(true)}} onMouseLeave={() => {setHoverState(false)}} ref={projectButton} >
+        <button className={`btn btn-primary marquee ${styles.marquee}`} onMouseEnter={() => {setHoverState(true)}} onMouseLeave={() => {setHoverState(false)}} ref={projectButton} >
             <div className="marquee__inner" ref={buttonTrack} >
-                <span className="marquee__line">Start a project <ProjectArrow /></span>
-                <span className="marquee__line">Start a project <ProjectArrow /></span>
-                <span className="marquee__line">Start a project <ProjectArrow /></span>
-                <span className="marquee__line">Start a project <ProjectArrow /></span>
+                <span className={`marquee__line ${styles.marquee__line}`} >Start a project <ProjectArrow /></span>
+                <span className={`marquee__line ${styles.marquee__line}`} >Start a project <ProjectArrow /></span>
+                <span className={`marquee__line ${styles.marquee__line}`} >Start a project <ProjectArrow /></span>
+                <span className={`marquee__line ${styles.marquee__line}`} >Start a project <ProjectArrow /></span>
             </div>
             <div className="marquee__inner clone" ref={ buttonTrackClone } >
-                <span className="marquee__line">Start a project <ProjectArrow /></span>
-                <span className="marquee__line">Start a project <ProjectArrow /></span>
-                <span className="marquee__line">Start a project <ProjectArrow /></span>
-                <span className="marquee__line">Start a project <ProjectArrow /></span>
+                <span className={`marquee__line ${styles.marquee__line}`} >Start a project <ProjectArrow /></span>
+                <span className={`marquee__line ${styles.marquee__line}`} >Start a project <ProjectArrow /></span>
+                <span className={`marquee__line ${styles.marquee__line}`} >Start a project <ProjectArrow /></span>
+                <span className={`marquee__line ${styles.marquee__line}`} >Start a project <ProjectArrow /></span>
             </div>
         </button>
       </div>

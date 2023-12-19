@@ -27,6 +27,7 @@ body {
             .inside-header {
                 #theme-mode-button {
                     opacity: 0;
+                    pointer-events: none;
                 }
                 a svg {
                     path {

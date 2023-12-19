@@ -37,6 +37,7 @@ export default function NavigationMenu({ menuItems, className }) {
     
     return (
       <motion.nav 
+        id="main-navigation" 
         className={cx( [ 'main-navigation' ] )} 
         aria-label={`${menuItems[0]?.menu?.node?.name} menu`} 
         role="navigation" 
