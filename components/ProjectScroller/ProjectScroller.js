@@ -1,6 +1,6 @@
 'use client';
 import { gql, useQuery } from '@apollo/client';
-import React, { useLayoutEffect, useRef } from 'react'
+import React, { useEffect, useLayoutEffect, useRef } from 'react'
 import Image from 'next/image';
 import gsap from 'gsap';
 import { ScrollTrigger } from 'gsap/dist/ScrollTrigger';
@@ -32,6 +32,7 @@ export default function ProjectScroller({ }) {
 
     const sectionRef = useRef(null);
     const triggerRef = useRef(null);
+    const projectCard = useRef([])
   
     gsap.registerPlugin(ScrollTrigger);
   
@@ -65,6 +66,47 @@ export default function ProjectScroller({ }) {
         }
     }, [loading, data]);
     
+    useEffect(()=>{
+        setTimeout(() => {      
+            const element = projectCard.current;
+            
+            element.forEach((ele)=>{
+              const handleMouseMove = (event) => {
+                const { clientX, clientY } = event;
+                const { left, top, width, height } = ele.getBoundingClientRect();
+          
+                const xPercent = ((clientX - left) / width - 0.5) // Normalize mouse position
+                const yPercent = ((clientY - top) / height - 0.5) 
+                
+                gsap.to(ele, {
+                  duration: 0.5,
+                  rotationX: 5 * yPercent, // Adjust the tilt sensitivity by changing the multiplier
+                  rotationY: 5 * xPercent,
+                  transformPerspective: 500,
+                  ease: 'power2.out',
+                });
+              };
+          
+              const handleMouseLeave = () => {
+                gsap.to(ele, {
+                  duration: 0.5,
+                  rotationX: 0,
+                  rotationY: 0,
+                  ease: 'power2.out',
+                });
+              };
+          
+              ele.addEventListener('mousemove', handleMouseMove);
+              ele.addEventListener('mouseleave', handleMouseLeave);
+          
+              return () => {
+                ele.removeEventListener('mousemove', handleMouseMove);
+                ele.removeEventListener('mouseleave', handleMouseLeave);
+              };
+            })
+          }, 5000);
+    },[])
+
     if (loading) return <p>Loading...</p>;
 
     if (error) return <p>Error :(</p>;
@@ -81,7 +123,7 @@ export default function ProjectScroller({ }) {
                 <div className={cx('pin-wrap')} ref={sectionRef}>
                     { projects.map((project, index) => (
                         
-                        <Link href={project.link} className={cx('project-item')} key={index}>
+                        <Link href={project.link} className={cx('project-item')} key={index} ref={(el) => (projectCard.current[index] = el)} >
                             <div className={cx('project-image')}>
                                 {project.featuredImage.node.mediaItemUrl ? (
                                     <Image
