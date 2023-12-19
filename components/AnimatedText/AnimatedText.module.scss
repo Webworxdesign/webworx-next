@@ -1,6 +1,7 @@
 .letter-span {
     display: inline-block;
     opacity: 0;
+    transform: translateY(100px);
     &.small {
         font-size: 72%;
     }

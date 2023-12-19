@@ -15,15 +15,15 @@ const AnimatedText = ({ text, delay = 0 }) => {
     gsap.fromTo(
       letters,
       { 
-        y: 40,
+        y: 100,
         opacity: 0
       },
       {
         y: 0,
         opacity: 1,
-        stagger: 0.05,
+        stagger: 0.02,
         delay: delay,
-        duration: 2,
+        duration: 1,
         ease: 'power4.out', 
       }
     )

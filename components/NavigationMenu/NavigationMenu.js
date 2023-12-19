@@ -11,6 +11,7 @@ import Curve from './Curve/Curve.js';
 import Image from 'next/image';
 import menuImage from './../../assets/images/menu-image.jpg';
 import ThemeSettings from '../../constants/themeSettings';
+import StartProjectButton from '../StartProjectButton/StartProjectButton.js';
 
 let cx = classNames.bind(styles);
 let cxFromWp = classNames.bind(stylesFromWP);
@@ -109,12 +110,7 @@ export default function NavigationMenu({ menuItems, className }) {
               </ul>
 
               
-              <button className="btn btn-primary marquee" style={{width: '200px'}}> 
-                <div className="marquee__inner">
-                  <span className="marquee__line">Start a project +</span>
-                  <span className="marquee__line">Start a project +</span>
-                </div>
-              </button>
+              <StartProjectButton />
 
               <div className={cx('social-media')}>
                 {socialMedia.map((item, index) => {

@@ -92,13 +92,23 @@
         margin-bottom: 50px;
     }
     button.btn {
-        background-color: var(--wwx--color--black);
+        display: block;
+        height: 90px;
+        width: 390px;
+        background-color: transparent;
         border: 1px solid var(--wwx--color--white);
         color: var(--wwx--color--white);
-        padding-left: 15px;
-        padding-right: 15px; 
+        font-family: 'Poly Sans';
+        font-size: 40px;
+        font-style: normal;
+        font-weight: 300;
+        line-height: 100%;
+        padding: 16px 45px; 
         &:hover {
             background-color: var(--wwx--color--white);
+            color: var(--wwx--color--black);
+        }
+        svg {
             color: var(--wwx--color--black);
         }
     } 

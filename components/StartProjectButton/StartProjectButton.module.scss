@@ -1,0 +1,35 @@
+@import "styles/breakpoints";
+
+button.btn.btn-primary {
+    display: block;
+    height: 90px;
+    width: 390px;
+    background-color: transparent;
+    border: 1px solid var(--wwx--color--white);
+    color: var(--wwx--color--white);
+    font-family: 'Poly Sans';
+    font-size: 40px;
+    font-style: normal;
+    font-weight: 300;
+    line-height: 100%;
+    padding: 16px 45px; 
+    .arrow-button {
+        display: inline-block;
+        margin-right: 50px;
+    }
+    &:hover {
+        background-color: var(--wwx--color--white);
+        color: var(--wwx--color--black);
+        svg {
+            color: var(--wwx--color--black);
+            fill: var(--wwx--color--black);
+            stroke: var(--wwx--color--black);
+            line {
+                stroke: var(--wwx--color--black);
+            }
+            path {
+                fill: var(--wwx--color--black);
+            }
+        }
+    }
+} 

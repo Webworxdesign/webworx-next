@@ -270,10 +270,6 @@ button {
         transition: all 0.3s ease-in-out;
         cursor: pointer;
         overflow: hidden;
-        &:hover {
-            background-color: var(--wwx--color--white);
-            color: var(--wwx--color--black);
-        }
         .marquee__inner {
             display: flex;
             .marquee__line {
@@ -284,6 +280,16 @@ button {
                 animation-duration: 5s;
                 animation-timing-function: linear;
                 animation-iteration-count: infinite;
+            }
+        }
+        &:hover {
+            background-color: var(--wwx--color--white);
+            color: var(--wwx--color--black);
+            .marquee__inner {
+                .marquee__line {
+                    animation-play-state: paused;
+                    animation: none;
+                }
             }
         }
     }
