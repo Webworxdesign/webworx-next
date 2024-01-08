@@ -61,12 +61,16 @@ export default function Header({
           <audio id="menu-sound" src={Click} />
           <div className={cx('menu-bar-items')}></div>		
           <button className={cx('menu-toggle')} onClick={function(){ 
-              setIsNavShown(!isNavShown)
+              setIsNavShown(!isNavShown) 
               playSound('menu-sound')
             }
             }>
+            <span className={cx( ['menu-bars-close', isNavShown ? 'open' : ''] )}>Close</span>
             <span className={ `icon-menu-bars ${cx('icon-menu-bars')} ` }>
-              <span></span><span></span><span></span><span></span>
+              <span></span>
+              <span></span>
+              <span></span>
+              <span></span>
             </span>
             <span className="screen-reader-text">Menu</span>		
           </button>

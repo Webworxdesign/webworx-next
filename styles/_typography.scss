@@ -105,6 +105,8 @@ body {
     font-weight: 300;
     line-height: 100%;
     margin-bottom: 60px;
+    mix-blend-mode: difference;
+    color: #fff;
     @media (max-width: $breakpoint-medium) {
         font-size: 4.6875rem;
         margin-bottom: 30px;

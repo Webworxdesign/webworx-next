@@ -7,6 +7,7 @@ import "keen-slider/keen-slider.min.css"
 import styles from "./review-carousel.module.scss" 
 import Image from "next/image";
 import useWindowDimensions from './../../fragments/WindowDimensions';
+import ViewArrowIcon from "../../assets/svg/ViewArrowIcon"
 
 const GetTestimonialsPosts = gql`
 query Testimonials {
@@ -48,7 +49,6 @@ export default function ReviewCarouselHome() {
   // Gsap Animations   
   const toggleSliderBtn = useRef(); 
   const sliderImage = useRef();
-  const buttonTimeline = useMemo(() => gsap.timeline({ paused: true }), []);
   const slidesTimeline = useMemo(() => gsap.timeline({ paused: true }), []);
   const slidesHoverRotateTimeline = useMemo(() => gsap.timeline({ paused: true }), []);
 
@@ -130,17 +130,6 @@ export default function ReviewCarouselHome() {
 	
     screenWidth < 700 ? setSliderItemWidth( screenWidth / 1.3 - 20 ) : 0;
 
-    let btnTopPos = '150px';
-    let btnLeftPos = '50%';
-    if(width < 767) {
-      btnTopPos = 'calc(100% + 200px)';
-      btnLeftPos = '50%';
-    }
-    buttonTimeline
-      .to(toggleSliderBtn.current, 0, { opacity: 0, duration: 0.5 })
-      .to(toggleSliderBtn.current, 0.75, { top: btnTopPos, left: btnLeftPos, delay: 0.5, duration: 0.75 })
-      .to(toggleSliderBtn.current, 0.1, { opacity: 1, delay: 0.15, duration: 0.5 });
-
     SliderItemsRefs.current.forEach( (slideItem, index) => {
       
       const positionTopArray = [0, 0, 0, 0, 0, 0];
@@ -169,7 +158,7 @@ export default function ReviewCarouselHome() {
       .to(
         slideItem,{ 
           rotate: hoverRotationArray[index], 
-          duration: 1, 
+          duration: 1.6, 
           ease: "power3.inOut", 
         }, 
         "<"
@@ -182,10 +171,8 @@ export default function ReviewCarouselHome() {
   useEffect(() => {
 
     if (play) {
-      buttonTimeline.play();
       slidesTimeline.play();
     } else {
-      buttonTimeline.reverse();
       slidesTimeline.reverse();
     }
 
@@ -247,24 +234,16 @@ export default function ReviewCarouselHome() {
             <div className={`${styles.buttonWrapper} ${styles.homeReview}`}>
               {loaded && instanceRef.current && (
                 <>
-                  <button
-                    // buttonStyle={["arrow-left", "green"]}
-                    onClick={ (e) => e.stopPropagation() || instanceRef.current?.prev() } 
-                    className={ `${ currentSlide === 0? styles.disabledArrow : "" } ` } 
-                    aria-label="button"
-                  >
-                    Left Large Arrow
-                  </button>
 
-                  <button
-                    // buttonStyle={["arrow-right", "green"]}
-                    onClick={(e) =>
-                      e.stopPropagation() || instanceRef.current?.next()
-                    }
-                    className={`${ currentSlide === instanceRef.current.track.details.slides.length - perView ? styles.disabledArrow : "" }  `} 
+                  <button 
+                    onClick={(e) => e.stopPropagation() || instanceRef.current?.next()}
+                    className={styles['arrow-right']} 
                     aria-label="button"
                   >
-                    Right Large Arrow
+                    <svg xmlns="http://www.w3.org/2000/svg" width={24} height={24} fill="none" >
+                      <path stroke="#222222" strokeLinecap="round" strokeWidth={3} d="M2.022 21.879 20.113 3.788M3.5 1.591h18.651" />
+                      <path fill="#222222" d="M20.735 19.818a1.5 1.5 0 0 0 3 0h-3Zm0-18.818v18.818h3V1h-3Z" />
+                    </svg>
                   </button>
                 </>
               )}
@@ -275,18 +254,25 @@ export default function ReviewCarouselHome() {
           <div className={`${styles['slider-toggler-row']} col-12 order-1 order-md-2`}>
             <div className="row">
               <div className={`${styles['review-slider-column']} col-12 col-md-6 order-2 order-md-1`}>
-
+                
+                
                 <button 
-                  className={`${styles['view-slider-btn']} btnz`} 
+                  className={`${styles['view-slider-btn']} ${styles['view']} ${play ? styles['active'] : ''}`} 
                   onClick={handleSliderStatus} 
                   onMouseEnter={() => setBtnHover(true)} 
                   onMouseLeave={() => setBtnHover(false)} 
-                  ref={toggleSliderBtn}
                   aria-label="button"
                 >
-                  {buttonText == true ? 'View All' : 'Close' }
+                  View All
                 </button> 
-
+                
+                <button 
+                  className={`${styles['view-slider-btn']} ${styles['close']} ${!play ? styles['active'] : ''}`} 
+                  onClick={handleSliderStatus} 
+                  aria-label="button"
+                >
+                  Close
+                </button> 
                 
               </div>
               <div className={`${styles['review-content-column']} col-12 col-md-6 order-1 order-md-2`}>

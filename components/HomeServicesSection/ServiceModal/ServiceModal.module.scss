@@ -1,8 +1,10 @@
 .serviceModalContainer{
-    height: 250px;
-    width: 300px;
+    height: 215px;
+    width: 100%;
+    max-width: 300px;
     position: absolute;
-    background-color: white;
+    background-color: white; 
+    border-radius: 20px; 
     overflow: hidden;
     pointer-events: none;
     display: flex;
@@ -26,7 +28,10 @@
 }
 
 .serviceModal img {
-    height: auto;
+    height: 100%;
+    width: 100%;
+    object-fit: cover;
+    object-position: center;
 }
 
 .cursor, .cursorLabel {
