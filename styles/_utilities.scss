@@ -282,16 +282,6 @@ button {
                 animation-iteration-count: infinite;
             }
         }
-        &:hover {
-            background-color: var(--wwx--color--white);
-            color: var(--wwx--color--black);
-            .marquee__inner {
-                .marquee__line {
-                    animation-play-state: paused;
-                    animation: none;
-                }
-            }
-        }
     }
 }
   

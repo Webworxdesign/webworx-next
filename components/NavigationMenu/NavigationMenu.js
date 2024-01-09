@@ -50,7 +50,7 @@ export default function NavigationMenu({ menuItems, className }) {
 
           <div className="row">
 
-            <div className="col-md-6">
+            <div className="col-md-6 desktop-only">
               <Image src={menuImage} alt="Menu Image" />
             </div>
 
@@ -90,7 +90,7 @@ export default function NavigationMenu({ menuItems, className }) {
                         </Link>
 
                         { children.length > 0 ? (
-                          <ul ref={subMenuHeight} className={cx('sub-menu', subMenuOpen ? 'open' : '')} > 
+                          <ul ref={subMenuHeight} className={cx('sub-menu', subMenuOpen ? 'open' : '', 'has-children')} > 
                             {children.map((child) => {
                               const { id, path, label, children, cssClasses } = child;
                               return (
@@ -110,7 +110,7 @@ export default function NavigationMenu({ menuItems, className }) {
               </ul>
 
               
-              <StartProjectButton />
+              <StartProjectButton colour="dark" />
 
               <div className={cx('social-media')}>
                 {socialMedia.map((item, index) => {

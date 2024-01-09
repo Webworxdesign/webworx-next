@@ -20,7 +20,7 @@ export default function HomeServiceSection() {
   return (
     <section className={cx('home-services-section')}>
         <div className='container'>
-            <h2 className='section-title'>Services</h2>
+            <h2 className='section-title' style={{color: '#ffffff', mixBlendMode: 'difference'}}>Services</h2>
             {
               services.map( (service, index) => {
 

@@ -7,7 +7,7 @@ import ProjectArrow from '../../assets/svg/PorjectArrow';
 
 let cx = className.bind(styles);
 
-export default function StartProjectButton() {
+export default function StartProjectButton(props) {
     
     const [hoverState,setHoverState] = useState(false)
     
@@ -66,7 +66,10 @@ export default function StartProjectButton() {
 
     return (
         
-        <button className={cx('btn', 'btn-primary', 'marquee')} onMouseEnter={() => {setHoverState(true)}} onMouseLeave={() => {setHoverState(false)}}>
+        <button 
+          className={cx('btn', 'btn-primary', 'marquee', props.colour)} 
+          onMouseEnter={() => {setHoverState(true)}} 
+          onMouseLeave={() => {setHoverState(false)}} >
             <div className="marquee__inner" ref={buttonTrack}>
                 <span className="marquee__line">Start a project <span className={cx('arrow-button')}><ProjectArrow width="20px" height="21px" stroke="#ffffff" fill="#ffffff" /></span></span>
                 <span className="marquee__line">Start a project <span className={cx('arrow-button')}><ProjectArrow width="20px" height="21px" stroke="#ffffff" fill="#ffffff" /></span></span>

@@ -32,4 +32,53 @@ button.btn.btn-primary {
             }
         }
     }
+    &.dark {
+        background-color: transparent;
+        border: 1px solid var(--wwx--color--black);
+        color: var(--wwx--color--black);
+        svg {
+            color: var(--wwx--color--black);
+            fill: var(--wwx--color--black);
+            stroke: var(--wwx--color--black);
+            line {
+                stroke: var(--wwx--color--black);
+            }
+            path {
+                fill: var(--wwx--color--black);
+            }
+        }
+        &:hover {
+            background-color: var(--wwx--color--black);
+            color: var(--wwx--color--white);
+            svg {
+                color: var(--wwx--color--white);
+                fill: var(--wwx--color--white);
+                stroke: var(--wwx--color--white);
+                line {
+                    stroke: var(--wwx--color--white);
+                }
+                path {
+                    fill: var(--wwx--color--white);
+                }
+            }
+        }
+    }
+    @media (max-width: $breakpoint-medium) {
+        height: 70px;
+        width: 300px;
+        font-size: 30px;
+        padding: 16px 30px; 
+        .arrow-button {
+            margin-right: 30px;
+        }
+    }
+    @media (max-width: $breakpoint-small) {
+        height: 60px;
+        width: 250px;
+        font-size: 25px;
+        padding: 16px 30px; 
+        .arrow-button {
+            margin-right: 30px;
+        }
+    }
 } 
